@@ -3,7 +3,9 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0.beta1'
 
-gem 'pg'
+gem 'pg', '>= 0.15.0'
+
+gem 'redcarpet', '>= 2.2.2'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -12,7 +14,9 @@ group :assets do
   gem 'coffee-rails', '~> 4.0.0.beta1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', platforms: :ruby
+  gem 'therubyracer', platforms: :ruby
+  gem "less-rails"
+  gem "twitter-bootstrap-rails"
 
   gem 'uglifier', '>= 1.0.3'
 end

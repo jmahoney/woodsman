@@ -1,13 +1,25 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  title: MyString
+  title: Live One
   content: MyText
   published_at: 2013-04-02 20:43:53
-  status: MyString
+  status: live
 
 two:
-  title: MyString
+  title: Live Two
   content: MyText
   published_at: 2013-04-02 20:43:53
-  status: MyString
+  status: live
+
+three:
+  title: Draft One
+  content: MyText
+  published_at: 2013-04-02 20:43:53
+  status: draft
+
+four:
+  title: Draft Two
+  content: MyText
+  published_at: 2013-04-02 20:43:53
+  status: draft
