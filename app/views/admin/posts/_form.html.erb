@@ -2,28 +2,57 @@
   <div class="control-group">
     <%= f.label :title, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :title, :class => 'text_field' %>
+      <%= f.text_field :title, :class => 'input-block-level' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :intro, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :intro, :class => 'input-block-level', :rows => 5 %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :content, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :content, :class => 'text_field' %>
+      <%= f.text_area :content, :class => 'input-block-level', :rows => 10 %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :published_at, :class => 'control-label' %>
+    <%= f.label :slug, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :published_at, :class => 'text_field' %>
+      <%= f.text_field :slug, :class => 'input-xlarge' %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :status, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :status, :class => 'text_field' %>
+      <%= select(:post, :status, Post.available_statuses, :class => 'text_field') %>
     </div>
   </div>
-
+  <div class="control-group">
+    <%= f.label :published_at, :class => 'control-label' %>
+    <div class="controls">
+      <%= datetime_select :post, :published_at, {:order => [:day, :month, :year], :start_year => 2000, :end_year => 2030}, {:class => 'input-small'} %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :html_title, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :html_title, :class => 'input-block-level' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :meta_description, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :meta_description, :class => 'input-block-level', :rows => 3 %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :meta_tags, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :meta_tags, :class => 'input-block-level' %>
+    </div>
+  </div>
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
