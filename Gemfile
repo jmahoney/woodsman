@@ -7,8 +7,6 @@ gem 'pg', '>= 0.15.0'
 
 gem 'redcarpet', '>= 2.2.2'
 
-gem 'stringex', '>=1.5.1'
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

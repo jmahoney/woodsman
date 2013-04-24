@@ -19,17 +19,6 @@ class PostTest < ActiveSupport::TestCase
     assert p.save
   end
   
-  test "creates slug from title when slug is blank" do
-    p = Post.new(:title => 'This is my post', :content => 'bar', :published_at => DateTime.now)
-    p.save
-    assert_equal("this-is-my-post", p.slug, "generated slug is incorrect")
-  end
-  
-  test "does not automagically create slug when already populated" do
-    p = Post.new(:title => 'This is my post', :content => 'bar', :slug => 'test-post', :published_at => DateTime.now)
-    p.save
-    assert_equal("test-post", p.slug, "found a generated slug when a manual one was specified")
-  end
   
   
   
