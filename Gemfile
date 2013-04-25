@@ -37,5 +37,12 @@ gem 'jbuilder', '~> 1.0.1'
 # Deploy with Capistrano
 # gem 'capistrano', group: :development
 
-# To use debugger
-# gem 'debugger'
+group :develop, :test do
+  gem 'debugger'
+end
+
+group :test do
+  gem 'timecop'
+end
+
+
