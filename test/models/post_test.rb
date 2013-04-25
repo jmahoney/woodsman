@@ -26,9 +26,7 @@ class PostTest < ActiveSupport::TestCase
       p = Post.new(:title => 'newer', :content => "content", :published_at => newdt)      
       p.save
       assert_equal newdt.strftime("%Y%m%d%H%M%S"), p.published_at.strftime("%Y%m%d%H%M%S")
-    end
-    
-    
+    end    
   end  
   
   test "generates a slug based on title" do
@@ -48,6 +46,32 @@ class PostTest < ActiveSupport::TestCase
       assert_equal "test#{dt.strftime('-%H%M%S')}", p.slug, "slug is not what we expect to be generated"
     end 
   end
+
+  test "converts string into a list of tags" do
+    p = Post.new(:title => "Test", :content => "content")
+    p.tag_list = "tag1, tag2, tag3"
+    assert_equal ["tag1","tag2", "tag3"], p.tags
+  end
   
+  test "removes redundant tags from list" do
+    p = Post.new(:title => "Test", :content => "content")
+    p.tag_list = "tag1, tag2, tag3, tag3, tag3"
+    assert_equal ["tag1","tag2", "tag3"], p.tags
+  end
+  
+  test "returns tags as a comma delimited string" do
+    p = Post.new
+    p.tags = ["tag1", "tag2", "tag3"]
+    assert_equal "tag1, tag2, tag3", p.tag_list
+  end
+  
+  test "can find a post with a certain tag" do
+    Post.create(:title => "With tag", :content => "content", :tag_list => 'tag1, tag2, tag3')
+    Post.create(:title => "Without tag", :content => "content", :tag_list => 'tag1, tag2')
+    
+    posts = Post.tagged("tag3")
+    assert_equal 1, posts.size
+    assert_equal "With tag", posts.first.title    
+  end
   
 end

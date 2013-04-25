@@ -1,5 +1,6 @@
 class Post < ActiveRecord::Base
   include Sluggable
+  include Taggable
   
   validates_presence_of :title, :content, :published_at
   before_validation :ensure_published_date_set
