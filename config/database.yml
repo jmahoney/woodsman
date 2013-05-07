@@ -48,7 +48,7 @@ test:
   encoding: unicode
   database: woodsman_test
   pool: 5
-  username: joe
+  username: postgres
   password:
 
 production:
