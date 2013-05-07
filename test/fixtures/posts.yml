@@ -3,23 +3,39 @@
 one:
   title: Live One
   content: MyText
-  published_at: 2013-04-02 20:43:53
-  status: live
+  published_at: 2013-01-02 20:43:53
+  status: published
+  slug: live-one
+  date_slug: 2013/01/live-one
 
 two:
   title: Live Two
   content: MyText
-  published_at: 2013-04-02 20:43:53
-  status: live
+  published_at: 2013-01-03 20:43:53
+  status: published
+  slug: live-two
+  date_slug: 2013/01/live-two
 
 three:
   title: Draft One
   content: MyText
-  published_at: 2013-04-02 20:43:53
+  published_at: 2013-01-02 20:43:53
   status: draft
+  slug: draft-one
+  date_slug: 2013/01/draft-one
 
 four:
   title: Draft Two
   content: MyText
-  published_at: 2013-04-02 20:43:53
-  status: draft
+  published_at: 2013-01-02 20:43:53
+  status:  draft
+  slug: draft-two
+  date_slug: 2013/01/draft-two
+
+five:
+  title: Live Three
+  content: MyText
+  published_at: 2013-03-03 20:43:53
+  status: published
+  slug: live-three
+  date_slug: 2013/03/live-three

@@ -1,25 +1,21 @@
 require "test_helper"
 
 class AuthenticationTest < ActionDispatch::IntegrationTest
-  def test_access_granted_for_posts_index
-    get "/posts"
-    assert_equal 200, status
-  end
   
   def test_access_denied_for_editing_methods
     get "/admin/posts/new"
     assert_equal 401, status
     
-    get "/admin/posts/1/edit"
+    get "/admin/posts/2002/08/testing/edit"
     assert_equal 401, status
     
     post "/admin/posts"
     assert_equal 401, status
     
-    patch "/admin/posts/1"
+    patch "/admin/posts/2002/08/testing"
     assert_equal 401, status
     
-    delete "/admin/posts/1"
+    delete "/admin/posts/2002/08/testing"
     assert_equal 401, status
   end
   

@@ -17,8 +17,8 @@ class PostTest < ActiveSupport::TestCase
   end
 
   test "sets published date to be current/date on create if not popluated" do
-    dt = DateTime.now
-    newdt = Date.today + 30
+    dt = Time.zone.now
+    newdt = Time.zone.today + 30
     Timecop.freeze(dt) do
       p = Post.new(:title => "title", :content => "content")
       p.save
@@ -39,7 +39,7 @@ class PostTest < ActiveSupport::TestCase
     p = Post.new(:title => "Test", :content => "content")
     p.save
     
-    dt = DateTime.now
+    dt = Time.zone.now
     Timecop.freeze(dt) do
       p = Post.new(:title => "Test", :content => "more content")
       p.save
@@ -72,6 +72,36 @@ class PostTest < ActiveSupport::TestCase
     posts = Post.tagged("tag3")
     assert_equal 1, posts.size
     assert_equal "With tag", posts.first.title    
+  end
+  
+  test "uses published date and slug as param" do
+    Timecop.freeze do
+      p = Post.create(:title => 'Testing To Param', :content => 'foo')
+      assert_equal "#{Time.zone.now.strftime('%Y/%m')}/testing-to-param", p.to_param
+      assert_equal "#{Time.now.strftime('%Y/%m')}/testing-to-param", p.to_param
+    end
+  end
+  
+  test "returns published posts" do
+    posts = Post.published
+    assert_equal 3, posts.size
+  end
+  
+  test "returns posts in chronological order of publishing" do
+    posts = Post.published.archive_order
+    assert_equal "Live One", posts.first.title
+    assert_equal "Live Three", posts.last.title
+  end
+  
+  test "returns posts in reverse-chronological order of publishing" do
+    posts = Post.published.blog_order
+    assert_equal "Live Three", posts.first.title
+    assert_equal "Live One", posts.last.title
+  end
+  
+  test "returns published posts for a specfied year and month" do
+    posts = Post.month(2013,1)
+    assert_equal 2, posts.size
   end
   
 end

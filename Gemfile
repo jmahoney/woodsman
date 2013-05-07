@@ -37,7 +37,7 @@ gem 'jbuilder', '~> 1.0.1'
 # Deploy with Capistrano
 # gem 'capistrano', group: :development
 
-group :develop, :test do
+group :develop do
   gem 'debugger'
 end
 

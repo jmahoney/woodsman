@@ -1,9 +1,24 @@
 Woodsman::Application.routes.draw do
-  resources :posts, only: [:index, :show]
   
+  # post editing done in the admin name space
   namespace :admin do
-    resources :posts
+    resources :posts, constraints: {id: /\d{4}\/\d{2}\/[a-z|A-Z|\-|0-9]+/}
   end
+  
+  # Make Posts accessible from urls using the date_slug of the post
+  # and without the /posts/ prefix (e.g.   /2001/02/this-is-the-slug)
+  # Among other things, the constraints enable the slashes in the slugs
+  resources :posts, only: [:show], path: '', constraints: {id: /\d{4}\/\d{2}\/[a-z|A-Z|\-|0-9]+/} do
+    get "archive", on: :collection
+  end
+  
+  # non-resourceful routes to handle date urls like /2004/04 & /2000
+  # permanently redirect a url like /2004 to /archive
+  get ":year", to: redirect("/archive"), constraints: {year: /\d{4}/}
+  # url format for a month archive
+  get ":year/:month", to: "posts#month", constraints: {year: /\d{4}/, month: /\d{2}/}
+    
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
