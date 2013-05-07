@@ -1,6 +1,8 @@
 language: ruby
 rvm:
   - "2.0.0"
+env:
+  - WOODSMAN_USER=foo WOODSMAN_PASSWORD=bar
 before_script:
   - psql -c 'create database woodsman_test;' -U postgres
   - RAILS_ENV=test bundle exec rake db:migrate
