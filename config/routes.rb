@@ -18,6 +18,9 @@ Woodsman::Application.routes.draw do
   # url format for a month archive
   get ":year/:month", to: "posts#month", constraints: {year: /\d{4}/, month: /\d{2}/}
     
+  #redirect old tumblr urls back to tumblr
+  get "/post/:id/:slug", to: redirect("#{ENV['WOODSMAN_TUMBLR_HOST']}/post/%{id}/%{slug}"), constraints: {id: /[0-9]+/, slug: /[a-z|A-Z|\-|_|0-9]+/}  
+  get "/post/:id", to: redirect("#{ENV['WOODSMAN_TUMBLR_HOST']}/post/%{id}"), constraints: {id: /[0-9]+/}
   
 
   # The priority is based upon order of creation: first created -> highest priority.

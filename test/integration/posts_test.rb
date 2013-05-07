@@ -31,11 +31,17 @@ class PostsTest < ActionDispatch::IntegrationTest
     assert_equal 200, status
   end
   
-  
-  
   test "should return 404 if no posts in a specific month" do
     get "/2000/01"  
     assert_equal 404, status
+  end
+  
+  test "should redirect tumblr urls to tumblr" do
+    get "/post/12345678"
+    assert_equal 301, status
+    
+    get "/post/1234534/slug-test"
+    assert_equal 301, status
   end
   
   
