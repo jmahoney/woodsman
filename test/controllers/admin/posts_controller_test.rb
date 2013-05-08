@@ -12,6 +12,11 @@ class Admin::PostsControllerTest < ActionController::TestCase
     assert_response :success
     assert_not_nil assigns(:posts)
   end
+  
+  test "should use admin layout" do
+    get :index
+    assert_template layout: "layouts/admin"
+  end
 
   test "should get new" do
     get :new

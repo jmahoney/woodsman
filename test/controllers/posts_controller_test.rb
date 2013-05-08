@@ -11,5 +11,10 @@ class PostsControllerTest < ActionController::TestCase
     get :show, id: @post
     assert_response :success
   end 
+  
+  test "should use application layout" do
+    get :show, id: @post
+    assert_template layout: "layouts/application"
+  end
 
 end
