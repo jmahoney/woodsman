@@ -43,6 +43,7 @@ end
 
 group :test do
   gem 'timecop'
+  gem 'simplecov', :require => false
 end
 
 
