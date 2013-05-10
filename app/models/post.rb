@@ -1,13 +1,16 @@
 class Post < ActiveRecord::Base
-  include Sluggable
+  include ActionView::Helpers::TextHelper
   include Taggable
   
   DRAFT = 'draft'
   PUBLISHED = 'published'
   
-  validates_presence_of :title, :content, :published_at
-  before_validation :ensure_published_date_set
+  validates_presence_of :title, :content, :published_at, :slug
+  validates_uniqueness_of :slug
+  before_validation :ensure_published_date_set, :ensure_slug_set
   before_save :ensure_date_slug_set
+
+  before_validation :ensure_slug_set
     
   def self.available_statuses
     [DRAFT, PUBLISHED]
@@ -50,9 +53,28 @@ class Post < ActiveRecord::Base
     end
   end
   
+  def ensure_slug_set
+    if self.slug.blank?
+      self.slug = slugify(self.title) #todo - make this generic
+    end
+  end
+  
   def ensure_date_slug_set
     dt = self.published_at ? self.published_at : DateTime.now
     self.date_slug = "#{dt.strftime('%Y/%m')}/#{self.slug}"
   end
+
+  #turn a supplied string into a readable string containing only
+  #alphanumeric characters & dashes. Make an attempt to 
+  def slugify(str)
+    str ||= ""
+    new_slug = str.dasherize.parameterize
+    if self.class.find_by_slug(new_slug)
+      new_slug = new_slug + DateTime.now.strftime("-%H%M%S")
+    end
+    new_slug
+  end
+  
+  
     
 end
