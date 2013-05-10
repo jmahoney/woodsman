@@ -34,3 +34,5 @@ en:
       new: "New"
       delete: "Delete"
   hello: "Hello world"
+  archive:
+    title: "Weblog Archive - cheerschopper.com"

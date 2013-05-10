@@ -1,4 +1,8 @@
 require "test_helper"
+require 'capybara/poltergeist'
+require 'capybara/rails'
+include Capybara::DSL
+Capybara.javascript_driver = :poltergeist
 
 class PostsTest < ActionDispatch::IntegrationTest
   test "should get a specific post" do
@@ -43,6 +47,10 @@ class PostsTest < ActionDispatch::IntegrationTest
     get "/post/1234534/slug-test"
     assert_equal 301, status
   end
-  
+
+  test "should see title on archive page" do
+    visit "/archive"
+    assert page.has_title?(I18n.t('archive.title'))
+  end
   
 end

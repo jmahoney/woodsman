@@ -44,6 +44,8 @@ end
 group :test do
   gem 'timecop'
   gem 'simplecov', :require => false
+  gem 'capybara'
+  gem 'poltergeist'
 end
 
 
