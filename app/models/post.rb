@@ -1,5 +1,4 @@
 class Post < ActiveRecord::Base
-  include ActionView::Helpers::TextHelper
   include Taggable
   
   DRAFT = 'draft'
@@ -9,7 +8,6 @@ class Post < ActiveRecord::Base
   validates_uniqueness_of :slug
   before_validation :ensure_published_date_set, :ensure_slug_set
   before_save :ensure_date_slug_set
-
   before_validation :ensure_slug_set
     
   def self.available_statuses

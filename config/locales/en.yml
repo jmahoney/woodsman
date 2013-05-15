@@ -34,5 +34,12 @@ en:
       new: "New"
       delete: "Delete"
   hello: "Hello world"
+  defaults:
+    title: "cheerschopper.com"
+  nav:
+    about: "About"
+    archives: "Archives"
+    contact: "Contact"
   archive:
-    title: "Weblog Archive - cheerschopper.com"
+    html_title: "Joe Mahoney - Blog"
+    title: "Archive"
