@@ -50,7 +50,7 @@ class PostsTest < ActionDispatch::IntegrationTest
 
   test "should see title on archive page" do
     visit "/archive"
-    assert page.has_title?(I18n.t('archive.title'))
+    assert page.has_title?(I18n.t('archive.html_title'))
   end
   
 end
