@@ -38,7 +38,7 @@ en:
     title: "cheerschopper.com"
   nav:
     about: "About"
-    archives: "Archives"
+    archive: "Archive"
     contact: "Contact"
   archive:
     html_title: "Joe Mahoney - Blog"
