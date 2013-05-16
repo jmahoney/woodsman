@@ -9,13 +9,19 @@ class Post < ActiveRecord::Base
   before_validation :ensure_published_date_set, :ensure_slug_set
   before_save :ensure_date_slug_set
   before_validation :ensure_slug_set
-    
+  
   def self.available_statuses
     [DRAFT, PUBLISHED]
   end
   
   def self.published
     where("status = '#{PUBLISHED}'")
+  end
+  
+  # get the data structure representing the archive of published posts
+  # it's an array with a record for each month where something was published
+  def self.archive
+    archive = self.published.select("COUNT(id) AS post_count, EXTRACT(month FROM published_at) as month, EXTRACT(year FROM published_at) as year").group("EXTRACT(year FROM published_at), EXTRACT(month FROM published_at)").order("EXTRACT(year FROM published_at) DESC, EXTRACT(month FROM published_at) DESC")
   end
   
   # the archive pages show posts in order of published date
