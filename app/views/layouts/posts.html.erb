@@ -37,20 +37,22 @@
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
   </head>
   <body>
-    <div class="row">
-      <div id="header-title" class="span4 offset2">
-        <h2><%= content_for?(:header_title) ? yield(:header_title) : t('defaults.title') %></h2>
+    <header class="row">
+      <div class="span6 offset2">
+        <h2><%= content_for?(:header_title) ? yield(:header_title) : t('defaults.header_title') %></h2>
       </div>
-      <div id="main-nav" class="span4">
+      <nav class="span4">
         <%= link_to(t('nav.archive'), archive_posts_path) %>
         |
         <%= link_to(t('nav.about'), "")%>
         |
         <%= link_to(t('nav.contact'), "")%>
-      </div>
-    </div>
+      </nav>
+    </header>
+    <div class="row">
     <%= yield %>
-
+    </div>
+    
     <!-- Javascripts
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

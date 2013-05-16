@@ -36,10 +36,23 @@ en:
   hello: "Hello world"
   defaults:
     title: "cheerschopper.com"
+    header_title: "cheerschopper.com"
   nav:
     about: "About"
     archive: "Archive"
     contact: "Contact"
   archive:
-    html_title: "Joe Mahoney - Blog"
+    html_title: "Archive - cheerschopper.com"
     title: "Archive"
+    intro: |
+      I've started and restarted my blog oh so many times. Around 2000 I had an EditThisPage
+      blog. I rolled my own blog tool in ColdFusion when I was first put in charge of a server.
+      I ignored a LiveJournal for about three years. Over the last few years 
+      I've been sporadically updating more than one Tumblr.
+      And now your're looking at a [Woodsman](https://github.com/jmahoney/woodsman) powered blog.
+    monthly: |
+      You can browse through the archive a month at a time. Hopefully I'll eventually have written 
+      enough to make a monthly archive worthwhile.
+    tags: |
+      Most posts have been tagged by the topic or topic they cover. So if you're interested
+      in diving into one particular area, click on one of the tags below.

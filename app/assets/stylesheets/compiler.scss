@@ -1,4 +1,9 @@
 @import "bootstrap";
 @import "bootstrap-responsive";
 
-@import "base/fonts"
+@import "base/typography";
+@import "layout/header";
+@import "layout/body";
+@import "layout/footer";
+@import "module/article";
+@import "module/nav";

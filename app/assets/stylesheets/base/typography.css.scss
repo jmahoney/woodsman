@@ -1,0 +1,41 @@
+$text-color: #372F33;
+$serif-family: Adelle, Georgia, serif;
+$sans-serif-family: DejaRip, Helvetica, Arial, sans-serif;
+
+body {
+  font-family: $sans-serif-family;
+  color: $text-color;
+  background-color: #FFF;
+}
+
+h1,h2,h3,h4,h5 {
+  font-family: $serif-family;
+  margin: 0px;
+  padding: 0px;
+}
+
+header h2 {
+  font-size: 1.3em;
+  line-height: 1.3em;
+  font-weight: normal;
+}
+
+nav {
+  font-family: $serif-family;
+  font-size: 1.3em;
+  line-height: 1.3em;
+}
+
+a, a:hover, a:active {
+  color: $text-color;
+}
+
+article {
+  font-size: 16px;
+  line-height: 24px;
+  
+  a, a:hover, a:active {
+    color: #2A372A;
+    font-weight: bold;
+  }
+}

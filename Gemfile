@@ -39,6 +39,7 @@ gem 'jbuilder', '~> 1.0.1'
 
 group :develop do
   gem 'debugger'
+  gem 'smacssify'
 end
 
 group :test do
