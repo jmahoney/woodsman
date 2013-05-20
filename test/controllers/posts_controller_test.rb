@@ -16,5 +16,11 @@ class PostsControllerTest < ActionController::TestCase
     get :show, id: @post
     assert_template layout: "layouts/posts"
   end
+  
+  test "should show archive page" do
+    get :archive
+    assert_response :success
+    assert_not_nil assigns(:archive)
+  end
 
 end

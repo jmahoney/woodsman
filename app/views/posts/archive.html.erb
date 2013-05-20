@@ -6,6 +6,11 @@
   </section>
   <section>
     <p><%= @markdown.render(t('archive.monthly')).html_safe %></p>
+    <ul class="post-archive">
+      <% @archive.each do |month| -%>
+      <li><%= month_archive_link(month) %></li>
+      <% end -%>
+    </ul>
   </section>
   <section>
     <p><%= @markdown.render(t('archive.tags')).html_safe %></p>
