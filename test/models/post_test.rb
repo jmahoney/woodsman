@@ -106,7 +106,7 @@ class PostTest < ActiveSupport::TestCase
   
   test "returns an array containing links to year and month archive links" do
     archive = Post.archive
-    assert_equal 2, archive.to_a.size
+    assert_equal 2, archive.to_a.size #hack
     assert_equal 3, archive.first.month
     assert_equal 1, archive.last.month
     assert_equal 2013, archive.first.year
