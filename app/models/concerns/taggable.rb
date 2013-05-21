@@ -4,7 +4,7 @@ module Taggable
   #set the model's tags field based on a comma-delimited
   #string of tags
   def tag_list=(str)
-    self.tags = str.split(',').map{|t| t.downcase.strip}.uniq
+    self.tags = str.split(',').map{|t| t.downcase.strip.dasherize.parameterize}.uniq
   end
   
   #return the model's tags as a comma-delimited string

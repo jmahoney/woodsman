@@ -13,6 +13,7 @@ class PostsController < ApplicationController
 
   def archive
     @archive = Post.archive
+    @tag_archive = Post.tag_archive
   end
   
   def month

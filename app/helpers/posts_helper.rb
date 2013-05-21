@@ -7,8 +7,18 @@ module PostsHelper
     link_to(link_text, url, {title: title_text})
   end
   
+  def tag_archive_link(item)
+    url = "/tagged/#{item.tag}"
+    title_text = "#{item.post_count} #{posts_str(item.post_count)} in #{item.tag}"
+    link_to(item.tag, url, {title: title_text})
+  end
+  
+  def list_separator(total, current)
+    " • " if current < total
+  end
   
   private 
+  
   #should we show "posts" or "post"? 
   def posts_str(post_count)
     post_count == 1 ? "post" : "posts"

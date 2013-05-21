@@ -7,6 +7,8 @@ one:
   status: published
   slug: live-one
   date_slug: 2013/01/live-one
+  tags: ["foo","bar","baz"]
+  
 
 two:
   title: Live Two
@@ -15,6 +17,7 @@ two:
   status: published
   slug: live-two
   date_slug: 2013/01/live-two
+  tags: ["foo","bar","baz"]
 
 three:
   title: Draft One
@@ -23,6 +26,7 @@ three:
   status: draft
   slug: draft-one
   date_slug: 2013/01/draft-one
+  tags: ["foo","bar"]
 
 four:
   title: Draft Two
@@ -31,6 +35,7 @@ four:
   status:  draft
   slug: draft-two
   date_slug: 2013/01/draft-two
+  tags: ["foo","quax"]
 
 five:
   title: Live Three
@@ -39,3 +44,4 @@ five:
   status: published
   slug: live-three
   date_slug: 2013/03/live-three
+  tags: ["foo","quax"]
