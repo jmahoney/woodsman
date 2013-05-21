@@ -5,8 +5,11 @@ article {
   }
   
   ul.post-archive-list {
+    margin: 0px;
+    padding: 0px;
     li {
-      display: inline;  
+      display: inline; 
+      list-style-position: outside;
     }
     
   }  

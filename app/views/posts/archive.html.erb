@@ -6,9 +6,12 @@
   </section>
   <section>
     <p><%= @markdown.render(t('archive.monthly')).html_safe %></p>
-    <ul class="post-archive">
-      <% @archive.each do |month| -%>
-      <li><%= month_archive_link(month) %></li>
+    <ul class="post-archive-list">
+      <% @archive.each_with_index do |month, i| -%>
+        <li><%= month_archive_link(month) %></li>
+        <% unless @archive.length == (i+1) -%>
+        &middot;
+        <% end -%>
       <% end -%>
     </ul>
   </section>
