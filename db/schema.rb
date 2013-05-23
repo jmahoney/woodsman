@@ -29,9 +29,9 @@ ActiveRecord::Schema.define(version: 20130430042740) do
     t.string   "date_slug"
   end
 
-  add_index "posts", ["date_slug"], name: "index_posts_on_date_slug"
-  add_index "posts", ["slug"], name: "index_posts_on_slug"
-  add_index "posts", ["status"], name: "index_posts_on_status"
-  add_index "posts", ["tags"], name: "name"
+  add_index "posts", ["date_slug"], name: "index_posts_on_date_slug", using: :btree
+  add_index "posts", ["slug"], name: "index_posts_on_slug", using: :btree
+  add_index "posts", ["status"], name: "index_posts_on_status", using: :btree
+  add_index "posts", ["tags"], name: "name", using: :gin
 
 end

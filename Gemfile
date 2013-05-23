@@ -10,8 +10,8 @@ gem 'redcarpet', '>= 2.2.2'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 4.0.0.beta1'
-  gem 'coffee-rails', '~> 4.0.0.beta1'
+  gem 'sass-rails',   '~> 4.0.0.rc1'
+  gem 'coffee-rails', '~> 4.0.0.rc1'
   
   gem 'bootstrap-sass', '~> 2.3.1.0'
   gem 'bootstrap-sass-extras'

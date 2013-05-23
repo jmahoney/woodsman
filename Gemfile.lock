@@ -29,7 +29,7 @@ GEM
     atomic (1.1.9)
     bootstrap-sass (2.3.1.0)
       sass (~> 3.2)
-    bootstrap-sass-extras (0.0.1)
+    bootstrap-sass-extras (0.0.3)
       rails (>= 3.1.0)
     builder (3.1.4)
     capybara (2.1.0)
@@ -38,7 +38,7 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    coffee-rails (4.0.0.beta1)
+    coffee-rails (4.0.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0.beta, < 5.0)
     coffee-script (2.2.0)
@@ -46,12 +46,12 @@ GEM
       execjs
     coffee-script-source (1.6.2)
     columnize (0.3.6)
-    debugger (1.5.0)
+    debugger (1.6.0)
       columnize (>= 0.3.1)
       debugger-linecache (~> 1.2.0)
-      debugger-ruby_core_source (~> 1.2.0)
+      debugger-ruby_core_source (~> 1.2.1)
     debugger-linecache (1.2.0)
-    debugger-ruby_core_source (1.2.0)
+    debugger-ruby_core_source (1.2.2)
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (1.4.0)
@@ -73,7 +73,7 @@ GEM
     minitest (4.7.4)
     multi_json (1.7.3)
     nokogiri (1.5.9)
-    pg (0.15.0)
+    pg (0.15.1)
     poltergeist (1.3.0)
       capybara (~> 2.1.0)
       faye-websocket (>= 0.4.4, < 0.5.0)
@@ -96,9 +96,9 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (10.0.4)
-    redcarpet (2.2.2)
-    sass (3.2.7)
-    sass-rails (4.0.0.beta1)
+    redcarpet (2.3.0)
+    sass (3.2.9)
+    sass-rails (4.0.0.rc1)
       railties (>= 4.0.0.beta, < 5.0)
       sass (>= 3.1.10)
       sprockets-rails (~> 2.0.0.rc0)
@@ -125,10 +125,10 @@ GEM
     treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
-    turbolinks (1.1.0)
+    turbolinks (1.1.1)
       coffee-rails
     tzinfo (0.3.37)
-    uglifier (1.3.0)
+    uglifier (2.1.1)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
     xpath (2.0.0)
@@ -141,7 +141,7 @@ DEPENDENCIES
   bootstrap-sass (~> 2.3.1.0)
   bootstrap-sass-extras
   capybara
-  coffee-rails (~> 4.0.0.beta1)
+  coffee-rails (~> 4.0.0.rc1)
   debugger
   jbuilder (~> 1.0.1)
   jquery-rails
@@ -149,7 +149,7 @@ DEPENDENCIES
   poltergeist
   rails (= 4.0.0.rc1)
   redcarpet (>= 2.2.2)
-  sass-rails (~> 4.0.0.beta1)
+  sass-rails (~> 4.0.0.rc1)
   simplecov
   smacssify
   timecop
