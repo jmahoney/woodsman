@@ -53,12 +53,20 @@ class PostsTest < ActionDispatch::IntegrationTest
     assert page.has_title?(I18n.t('archive.html_title'))
   end
   
-  test "should see links to monthly and tag archives" do
+  test "should see links to monthly and tag archives on archive page" do
     visit "/archive"
     assert page.has_link? "January, 2013"
     assert page.has_link? "foo"
     assert page.has_link? "bar"
     assert page.has_link? "baz"
     assert page.has_link? "quax"
+  end
+  
+  test "should see intros and links to a month worth of posts on a monthly archive page" do
+    visit "/2013/01"
+    assert page.has_link? "Live One"
+    assert page.has_link? "Live Two"
+    assert page.has_text? "archive intro for Live One"
+    assert page.has_text? "regular intro for Live Two"
   end
 end

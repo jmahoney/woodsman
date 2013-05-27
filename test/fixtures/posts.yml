@@ -2,6 +2,8 @@
 
 one:
   title: Live One
+  archive_intro: archive intro for Live One
+  intro: regular intro for Live One 
   content: MyText
   published_at: 2013-01-02 20:43:53
   status: published
@@ -12,6 +14,7 @@ one:
 
 two:
   title: Live Two
+  intro: regular intro for Live Two
   content: MyText
   published_at: 2013-01-03 20:43:53
   status: published
@@ -39,6 +42,8 @@ four:
 
 five:
   title: Live Three
+  archive_intro: archive intro for Live Three
+  intro: regular intro for Live Three
   content: MyText
   published_at: 2013-03-03 20:43:53
   status: published

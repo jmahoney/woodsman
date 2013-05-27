@@ -15,7 +15,11 @@ class Post < ActiveRecord::Base
   end
   
   def self.published
-    where("status = '#{PUBLISHED}'")
+    where("status = ?", PUBLISHED)
+  end
+  
+  def self.draft
+    where("status = ?", DRAFT)
   end
   
   # get the data structure representing the archive of published posts
@@ -28,7 +32,7 @@ class Post < ActiveRecord::Base
   def self.tag_archive
     self.published.select("UNNEST(tags) as tag, COUNT(id) AS post_count").group("UNNEST(tags)").order("count(id) DESC")
   end
-  
+    
   # the archive pages show posts in order of published date
   def self.archive_order
     order("published_at ASC")
@@ -83,7 +87,4 @@ class Post < ActiveRecord::Base
     end
     new_slug
   end
-  
-  
-    
 end

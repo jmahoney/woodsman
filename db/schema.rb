@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130430042740) do
+ActiveRecord::Schema.define(version: 20130523081252) do
 
   create_table "posts", force: true do |t|
     t.string   "title",                              null: false
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20130430042740) do
     t.string   "meta_tags"
     t.string   "tags",                                            array: true
     t.string   "date_slug"
+    t.text     "archive_intro"
   end
 
   add_index "posts", ["date_slug"], name: "index_posts_on_date_slug", using: :btree

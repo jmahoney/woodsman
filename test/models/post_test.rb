@@ -113,7 +113,6 @@ class PostTest < ActiveSupport::TestCase
     assert_equal 2, archive.last.post_count
   end
   
-  
   test "returns an array containing links to tag archive links" do
     tag_archive = Post.tag_archive
     assert_equal 4, tag_archive.length

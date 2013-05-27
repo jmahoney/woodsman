@@ -1,0 +1,4 @@
+<section>
+  <%= @markdown.render(post.archive_intro).html_safe unless post.archive_intro.blank? %>
+  <%= link_to t("archive.read_more"), post_path(post)%>
+</section>

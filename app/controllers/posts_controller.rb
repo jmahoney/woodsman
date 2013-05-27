@@ -17,7 +17,9 @@ class PostsController < ApplicationController
   end
   
   def month
-    @posts = Post.archive_order.month(params[:year].to_i, params[:month].to_i)
+    @year = params[:year].to_i
+    @month = params[:month].to_i
+    @posts = Post.archive_order.month(@year, @month)
   end
   
 

@@ -1,0 +1,10 @@
+<% unless post.intro.blank? -%>
+<section>
+  <%= @markdown.render(post.intro).html_safe %>
+</section>
+<% end -%>
+<% unless post.content.blank? -%>
+<section>
+  <%= @markdown.render(post.content).html_safe %>
+</section>
+<% end -%>

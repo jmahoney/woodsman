@@ -37,20 +37,20 @@
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
   </head>
   <body>
-    <header class="row">
-      <div class="span6 offset2">
-        <h2><%= content_for?(:header_title) ? yield(:header_title) : t('defaults.header_title') %></h2>
-      </div>
-      <nav class="span3">
-        <%= link_to(t('nav.archive'), archive_posts_path) %>
-        |
-        <%= link_to(t('nav.about'), "")%>
-        |
-        <%= link_to(t('nav.contact'), "")%>
-      </nav>
-    </header>
-    <div class="row">
-    <%= yield %>
+    <div class="container">
+      <header class="row">
+        <div class="span6 offset1">
+          <h2><%= content_for?(:header_title) ? yield(:header_title) : t('defaults.header_title') %></h2>
+        </div>
+        <nav class="span3">
+          <%= link_to(t('nav.archive'), archive_posts_path) %>
+          |
+          <%= link_to(t('nav.about'), "")%>
+          |
+          <%= link_to(t('nav.contact'), "")%>
+        </nav>
+      </header>
+      <%= yield %>
     </div>
     
     <!-- Javascripts

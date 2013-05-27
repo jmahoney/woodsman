@@ -1,0 +1,25 @@
+<% content_for :html_title do -%><%= t('archive.month_html_title', month: @month, year: @year)%><% end -%>
+
+<% @posts.each do |post| -%>
+<div class="row">
+  <article class="span7 offset1">
+    <div class="row">
+      <div class="span7">
+        <h1><%= link_to post.title, post_path(post) %></h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span5">
+        <% if post.archive_intro.blank? -%>
+          <%= render partial: "full_post", locals: {post: post} %>
+        <% else -%>
+          <%= render partial: "truncated_post", locals: {post: post}  %>
+        <% end -%>
+      </div>
+      <div class="span2">
+        <span class="post_date"><%= link_to post.published_at.strftime("%A, %e %B %Y"), post_path(post) %></span>
+      </div>
+    </div>
+  </article>
+</div>
+<% end -%>
