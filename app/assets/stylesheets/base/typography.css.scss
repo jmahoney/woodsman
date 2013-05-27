@@ -15,17 +15,22 @@ h1,h2,h3,h4,h5 {
 }
 
 header h2 {
-  font-size: 1.3em;
-  line-height: 1.3em;
+  font-size: 18px;
+  line-height: 18px;
   font-weight: normal;
 }
 
 nav {
   font-family: $serif-family;
-  font-size: 1.3em;
-  line-height: 1.3em;
+  font-size: 18px;
+  line-height: 18px;
   text-transform: lowercase;
 }
+
+h1 {
+  font-size: 18px;
+}
+
 
 a, a:hover, a:active {
   color: $text-color;

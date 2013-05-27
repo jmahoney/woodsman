@@ -1,25 +1,18 @@
-<%- model_class = Post -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
-</div>
-
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
-  <dd><%= @post.title %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:content) %>:</strong></dt>
-  <dd><%= @post.content %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:published_at) %>:</strong></dt>
-  <dd><%= @post.published_at %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:status) %>:</strong></dt>
-  <dd><%= @post.status %></dd>
-</dl>
-
-<div class="form-actions">
-  <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_admin_post_path(@post), :class => 'btn' %>
-  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              admin_post_path(@post),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
+<% content_for :html_title do -%><%= @post.html_title.blank? ? @post.title : @post.html_title %><% end -%>
+<div class="row">
+  <article class="span9 offset1">
+    <div class="row">
+      <div class="span9">
+        <h1><%= @post.title %></h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span7">      
+        <%= render partial: "full_post", locals: {post: @post} %>      
+      </div>
+      <div class="span2">
+        <span class="post_date"><%= link_to @post.published_at.strftime("%A, %e %B %Y"), post_path(@post) %></span>
+      </div>
+    </div>
+  </article>
 </div>
