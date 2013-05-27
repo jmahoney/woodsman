@@ -2,14 +2,14 @@
 
 <% @posts.each do |post| -%>
 <div class="row">
-  <article class="span7 offset1">
+  <article class="span9 offset1">
     <div class="row">
-      <div class="span7">
+      <div class="span9">
         <h1><%= link_to post.title, post_path(post) %></h1>
       </div>
     </div>
     <div class="row">
-      <div class="span5">
+      <div class="span7">
         <% if post.archive_intro.blank? -%>
           <%= render partial: "full_post", locals: {post: post} %>
         <% else -%>
