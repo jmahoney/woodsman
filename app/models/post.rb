@@ -22,12 +22,6 @@ class Post < ActiveRecord::Base
     where("status = ?", DRAFT)
   end
   
-  # get the data structure representing the archive of published posts
-  # it's an array with a record for each month where something was published
-  def self.archive
-    self.published.select("COUNT(id) AS post_count, EXTRACT(month FROM published_at) as month, EXTRACT(year FROM published_at) as year").group("EXTRACT(year FROM published_at), EXTRACT(month FROM published_at)").order("EXTRACT(year FROM published_at) DESC, EXTRACT(month FROM published_at) DESC")
-  end
-  
   # get the data structure representing the tag archive of published posts
   def self.tag_archive
     self.published.select("UNNEST(tags) as tag, COUNT(id) AS post_count").group("UNNEST(tags)").order("count(id) DESC")
@@ -45,7 +39,8 @@ class Post < ActiveRecord::Base
   
   # get published posts for a specific year/month
   def self.month(year, month)
-    posts = published.where("EXTRACT(YEAR FROM published_at) = ? AND EXTRACT(MONTH FROM published_at) = ?", year, month)
+    dt = Time.zone.local(year, month, 1, 0, 0)
+    posts = published.where(published_at: dt.beginning_of_month..dt.end_of_month)
     if posts.empty?
       raise ActiveRecord::RecordNotFound
     else

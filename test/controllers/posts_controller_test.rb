@@ -20,16 +20,8 @@ class PostsControllerTest < ActionController::TestCase
   test "should show archive page" do
     get :archive
     assert_response :success
-    assert_not_nil assigns(:archive)
+    assert_not_nil assigns(:archive)  
     assert_not_nil assigns(:tag_archive)
-  end
-  
-  test "should show monthly archive page" do
-    get :month, {month: 01, year: 2013}
-    assert_response :success
-    assert_not_nil assigns(:posts)
-    assert_not_nil assigns(:year)
-    assert_not_nil assigns(:month)
   end
 
 end

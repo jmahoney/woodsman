@@ -16,7 +16,7 @@ Woodsman::Application.routes.draw do
   # permanently redirect a url like /2004 to /archive
   get ":year", to: redirect("/archive"), constraints: {year: /\d{4}/}
   # url format for a month archive
-  get ":year/:month", to: "posts#month", constraints: {year: /\d{4}/, month: /\d{2}/}
+  get ":year/:month", to: redirect("/archive"), constraints: {year: /\d{4}/, month: /\d{2}/}
     
   #redirect old tumblr urls back to tumblr
   get "/post/:id/:slug", to: redirect("#{ENV['WOODSMAN_TUMBLR_HOST']}/post/%{id}/%{slug}"), constraints: {id: /[0-9]+/, slug: /[a-z|A-Z|\-|_|0-9]+/}  

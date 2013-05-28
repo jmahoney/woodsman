@@ -30,14 +30,9 @@ class PostsTest < ActionDispatch::IntegrationTest
     assert_equal 301, status
   end
   
-  test "should ask for a specific month of posts" do
+  test "should redirect to the archive page for a month url" do
     get "/2013/01"
-    assert_equal 200, status
-  end
-  
-  test "should return 404 if no posts in a specific month" do
-    get "/2000/01"  
-    assert_equal 404, status
+    assert_equal 301, status
   end
   
   test "should redirect tumblr urls to tumblr" do
@@ -53,20 +48,19 @@ class PostsTest < ActionDispatch::IntegrationTest
     assert page.has_title?(I18n.t('archive.html_title'))
   end
   
-  test "should see links to monthly and tag archives on archive page" do
+  test "should see month headings and links to published post titles" do
     visit "/archive"
-    assert page.has_link? "January, 2013"
+    assert page.has_link? "Live One"
+    assert page.has_link? "Live Two"
+    assert page.has_link? "Live Three"
+  end
+  
+  test "should see links to tag archives on archive page" do
+    visit "/archive"
     assert page.has_link? "foo"
     assert page.has_link? "bar"
     assert page.has_link? "baz"
     assert page.has_link? "quax"
   end
   
-  test "should see intros and links to a month worth of posts on a monthly archive page" do
-    visit "/2013/01"
-    assert page.has_link? "Live One"
-    assert page.has_link? "Live Two"
-    assert page.has_text? "archive intro for Live One"
-    assert page.has_text? "regular intro for Live Two"
-  end
 end

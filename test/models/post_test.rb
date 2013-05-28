@@ -99,20 +99,6 @@ class PostTest < ActiveSupport::TestCase
     assert_equal "Live One", posts.last.title
   end
   
-  test "returns published posts for a specfied year and month" do
-    posts = Post.month(2013,1)
-    assert_equal 2, posts.size
-  end
-  
-  test "returns an array containing links to year and month archive links" do
-    archive = Post.archive
-    assert_equal 2, archive.length
-    assert_equal 3, archive.first.month
-    assert_equal 1, archive.last.month
-    assert_equal 2013, archive.first.year
-    assert_equal 2, archive.last.post_count
-  end
-  
   test "returns an array containing links to tag archive links" do
     tag_archive = Post.tag_archive
     assert_equal 4, tag_archive.length

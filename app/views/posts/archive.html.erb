@@ -6,22 +6,21 @@
       <p><%= @markdown.render(t('archive.intro')).html_safe %></p>
     </section>
     <section>
-      <p><%= @markdown.render(t('archive.monthly')).html_safe %></p>
-      <ul class="post-archive-list">
-        <% @archive.each_with_index do |month, i| -%>
-          <li><%= month_archive_link(month) %></li>
-          <%= list_separator(@archive.length, i+1) %>
-        <% end -%>
-      </ul>
-    </section>
-    <section>
       <p><%= @markdown.render(t('archive.tags')).html_safe %></p>
-      <ul class="post-archive-list">
+      <ul class="tag-archive-list">
         <% @tag_archive.each_with_index do |tag, i| -%>
           <li><%= tag_archive_link(tag) %></li>
           <%= list_separator(@tag_archive.length, i+1) %>
         <% end -%>
       </ul>
+    </section>
+    <section>
+      <p><%= @markdown.render(t('archive.monthly')).html_safe %></p>
+      <% @archive.each do |post| -%>
+        <ul class="post-archive-list">
+          <li><%= link_to post.title, post_path(post) %> <span class="dt"><%= post.published_at.strftime("%d %b, %Y")%></span></li>
+        </ul>
+      <% end -%>
     </section>
   </article>
 </div>

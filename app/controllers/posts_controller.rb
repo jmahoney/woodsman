@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   end
 
   def archive
-    @archive = Post.archive
+    @archive = Post.published.archive_order
     @tag_archive = Post.tag_archive
   end
   
