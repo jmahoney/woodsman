@@ -1,26 +1,20 @@
 <% content_for :html_title do -%><%= t('archive.html_title')%><% end -%>
+
 <div class="row">
-  <article class="span9 offset1">
-    <h1><%= t('archive.title')%></h1>
-    <section>
-      <p><%= @markdown.render(t('archive.intro')).html_safe %></p>
-    </section>
-    <section>
-      <p><%= @markdown.render(t('archive.tags')).html_safe %></p>
-      <ul class="tag-archive-list">
-        <% @tag_archive.each_with_index do |tag, i| -%>
-          <li><%= tag_archive_link(tag) %></li>
-          <%= list_separator(@tag_archive.length, i+1) %>
+  <div class="span7">  
+    <article>
+      <h1><%= t('archive.title')%></h1>
+      <section>
+        <%= @markdown.render(t('archive.intro')).html_safe %>
+      </section>
+      <section>
+        <% @archive.each do |post| -%>
+          <ul class="unstyled">
+            <li><%= link_to post.title, post_path(post) %> <span class="dt"><%= post.published_at.strftime("%d %b, %Y")%></span></li>
+          </ul>
         <% end -%>
-      </ul>
-    </section>
-    <section>
-      <p><%= @markdown.render(t('archive.monthly')).html_safe %></p>
-      <% @archive.each do |post| -%>
-        <ul class="post-archive-list">
-          <li><%= link_to post.title, post_path(post) %> <span class="dt"><%= post.published_at.strftime("%d %b, %Y")%></span></li>
-        </ul>
-      <% end -%>
-    </section>
-  </article>
+      </section>
+    </article>        
+  </div>
+
 </div>

@@ -1,18 +1,11 @@
 <% content_for :html_title do -%><%= @post.html_title.blank? ? @post.title : @post.html_title %><% end -%>
 <div class="row">
-  <article class="span9 offset1">
-    <div class="row">
-      <div class="span9">
-        <h1><%= @post.title %></h1>
-      </div>
-    </div>
-    <div class="row">
-      <div class="span7">      
-        <%= render partial: "full_post", locals: {post: @post} %>      
-      </div>
-      <div class="span2">
-        <span class="post_date"><%= link_to @post.published_at.strftime("%A, %e %B %Y"), post_path(@post) %></span>
-      </div>
-    </div>
-  </article>
+  <div class="span7">  
+    <article>
+      <h1><%= @post.title %></h1>
+      <section>
+        <%= render partial: "full_post", locals: {post: @post} %>    
+      </section>
+    </article>        
+  </div>
 </div>

@@ -35,17 +35,17 @@ en:
       delete: "Delete"
   hello: "Hello world"
   defaults:
-    title: "cheerschopper.com"
-    header_title: "cheerschopper.com"
+    title: "Joe Mahoney"
+    header_title: "Joe Mahoney"
   nav:
     about: "About"
     archive: "Archive"
     contact: "Contact"
   archive:
-    html_title: "Archive - cheerschopper.com"
+    html_title: "Archive - Joe Mahoney"
     title: "Archive"
     month_title: "Archive for %{month}, %{year}"
-    month_html_title: "Archive for %{month}, %{year} - cheerschopper.com"
+    month_html_title: "Archive for %{month}, %{year} - Joe Mahoney"
     intro: |
       I've started and restarted my blog oh-so-many times. Around 2000 I had an EditThisPage
       blog. I rolled my own blog tool in ColdFusion when I was first put in charge of a server.

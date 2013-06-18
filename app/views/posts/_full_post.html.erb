@@ -1,5 +1,5 @@
 <% unless post.intro.blank? -%>
-<section>
+<section class="lead">
   <%= @markdown.render(post.intro).html_safe %>
 </section>
 <% end -%>
