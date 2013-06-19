@@ -106,4 +106,23 @@ class PostTest < ActiveSupport::TestCase
     assert_equal 3, tag_archive.first.post_count
   end
   
+  test "returns next post in chronological order" do
+    posts = Post.published.archive_order
+    assert_equal posts[1], posts[0].next
+    posts = Post.published.blog_order
+    assert_equal posts[1], posts[2].next
+  end
+  
+  test "returns previous post in chronological order" do
+    posts = Post.published.archive_order
+    assert_equal posts[1], posts[2].previous
+    posts = Post.published.blog_order
+    assert_equal posts[1], posts[0].previous   
+  end
+  
+  test "previous and next post methods respect published status" do
+    assert_equal "published", Post.published.archive_order.first.next.status
+    assert_equal "draft", Post.draft.blog_order.first.previous.status
+  end
+  
 end

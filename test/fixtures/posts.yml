@@ -5,7 +5,7 @@ one:
   archive_intro: archive intro for Live One
   intro: regular intro for Live One 
   content: MyText
-  published_at: 2013-01-02 20:43:53
+  published_at: 2013-01-02 20:43:01
   status: published
   slug: live-one
   date_slug: 2013/01/live-one
@@ -16,7 +16,7 @@ two:
   title: Live Two
   intro: regular intro for Live Two
   content: MyText
-  published_at: 2013-01-03 20:43:53
+  published_at: 2013-01-03 20:43:02
   status: published
   slug: live-two
   date_slug: 2013/01/live-two
@@ -25,7 +25,7 @@ two:
 three:
   title: Draft One
   content: MyText
-  published_at: 2013-01-02 20:43:53
+  published_at: 2013-01-02 20:43:03
   status: draft
   slug: draft-one
   date_slug: 2013/01/draft-one
@@ -34,7 +34,7 @@ three:
 four:
   title: Draft Two
   content: MyText
-  published_at: 2013-01-02 20:43:53
+  published_at: 2013-01-02 20:43:04
   status:  draft
   slug: draft-two
   date_slug: 2013/01/draft-two
@@ -45,7 +45,7 @@ five:
   archive_intro: archive intro for Live Three
   intro: regular intro for Live Three
   content: MyText
-  published_at: 2013-03-03 20:43:53
+  published_at: 2013-03-03 20:43:05
   status: published
   slug: live-three
   date_slug: 2013/03/live-three
