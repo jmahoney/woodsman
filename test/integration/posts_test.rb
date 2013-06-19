@@ -55,12 +55,5 @@ class PostsTest < ActionDispatch::IntegrationTest
     assert page.has_link? "Live Three"
   end
   
-  test "should see links to tag archives on archive page" do
-    visit "/archive"
-    assert page.has_link? "foo"
-    assert page.has_link? "bar"
-    assert page.has_link? "baz"
-    assert page.has_link? "quax"
-  end
   
 end
