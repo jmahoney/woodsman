@@ -46,15 +46,12 @@
               <a href="/archive">Archive</a>
             </li>
             <li>
-              <a href="/about">About</a>
-            </li>
-            <li>
-              <a href="/contact">Contact</a>
+              <a href="/about">About & Contact</a>
             </li>
           </ul>
         </nav>
         <masthead>
-          <h5 class="muted"><%= content_for?(:header_title) ? yield(:header_title) : t('defaults.header_title') %></h5>
+          <h4 class="muted"><%= content_for?(:header_title) ? yield(:header_title) : t('defaults.header_title') %></h4>
         </masthead>
       </header>    
       <%= yield %>

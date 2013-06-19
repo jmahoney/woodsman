@@ -49,3 +49,7 @@ en:
       the longest serving of which is probably [my tumblr](http://cheerschopper.tumblr.com).
       This archive collects a few posts from the old days and any writing published since 
       the middle of 2013.
+  post:
+    date_time: "This post was published at %{time} on %{date}"
+    next: "Next:"
+    previous: "Previously: "

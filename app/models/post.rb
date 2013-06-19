@@ -50,12 +50,12 @@ class Post < ActiveRecord::Base
   
   # return the next post in chronological order
   def next
-    self.class.where('published_at > ? AND status = ?', self.published_at, self.status).limit(1).first
+    self.class.where('published_at > ? AND status = ?', self.published_at, self.status).order("published_at ASC").limit(1).first
   end
   
   # return the previous post in chronological order
   def previous
-    self.class.where("published_at < ? AND status = ?", self.published_at, self.status).limit(1).first
+    self.class.where("published_at < ? AND status = ?", self.published_at, self.status).order("published_at DESC").limit(1).first
   end
   
   # post urls will always be in the format /2013/04/my-post-slug
