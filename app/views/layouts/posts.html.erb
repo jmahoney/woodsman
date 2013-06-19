@@ -35,27 +35,27 @@
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
   </head>
   <body>
-    <div class="container">
-      <header>
-        <div class="row">
-          <div class="span7">
-            <ul class="nav nav-pills pull-right">
-              <li>
-                <a href="/">Home</a>
-              </li>
-              <li>
-                <a href="/archive">Archive</a>
-              </li>
-              <li>
-                <a href="/about">About</a>
-              </li>
-              <li>
-                <a href="/contact">Contact</a>
-              </li>
-            </ul>
-            <h5 class="muted"><%= content_for?(:header_title) ? yield(:header_title) : t('defaults.header_title') %></h5>
-          </div>
-        </div>
+    <div class="container-narrow">
+      <header class="row">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a href="/archive">Archive</a>
+            </li>
+            <li>
+              <a href="/about">About</a>
+            </li>
+            <li>
+              <a href="/contact">Contact</a>
+            </li>
+          </ul>
+        </nav>
+        <masthead>
+          <h5 class="muted"><%= content_for?(:header_title) ? yield(:header_title) : t('defaults.header_title') %></h5>
+        </masthead>
       </header>    
       <%= yield %>
     </div>

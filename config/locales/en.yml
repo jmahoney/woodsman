@@ -44,17 +44,8 @@ en:
   archive:
     html_title: "Archive - Joe Mahoney"
     title: "Archive"
-    month_title: "Archive for %{month}, %{year}"
-    month_html_title: "Archive for %{month}, %{year} - Joe Mahoney"
     intro: |
-      I've started and restarted my blog oh-so-many times. Around 2000 I had an EditThisPage
-      blog. I rolled my own blog tool in ColdFusion when I was first put in charge of a server.
-      I ignored a LiveJournal for about three years. Over the last few years 
-      I've been sporadically updating more than one Tumblr.
-      And now you're looking at a [Woodsman](https://github.com/jmahoney/woodsman) powered blog.
-    monthly: |
-      You can browse through the archive a month at a time. Hopefully I'll eventually have written 
-      enough to make a monthly archive worthwhile.
-    tags: |
-      Most posts have been tagged by the topic or topic they cover. So if you're interested
-      in diving into one particular area, click on one of the tags below.
+      Over the years I've tried and abandoned quite a few blogging services and tools, 
+      the longest serving of which is probably [my tumblr](http://cheerschopper.tumblr.com).
+      This archive collects a few posts from the old days and any writing published since 
+      the middle of 2013.
