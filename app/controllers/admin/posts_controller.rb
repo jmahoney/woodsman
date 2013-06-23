@@ -1,4 +1,6 @@
 class Admin::PostsController < Admin::AdminController
+  include Markdownable
+  
   layout "admin"
   
   before_action :set_post, only: [:show, :edit, :update, :destroy]
@@ -13,6 +15,8 @@ class Admin::PostsController < Admin::AdminController
   # GET /admin/posts/1
   # GET /admin/posts/1.json
   def show
+    set_markdown_renderer
+    render :layout => 'posts'
   end
 
   # GET /admin/posts/new
@@ -31,7 +35,7 @@ class Admin::PostsController < Admin::AdminController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to admin_posta_path, notice: 'Post was successfully created.' }
+        format.html { redirect_to admin_posts_path, notice: 'Post was successfully created.' }
         format.json { render action: 'show', status: :created, location: @post }
       else
         format.html { render action: 'new' }

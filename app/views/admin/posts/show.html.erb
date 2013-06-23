@@ -1,27 +1,19 @@
 <%- model_class = Post -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
-</div>
-
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
-  <dd><%= @post.title %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:content) %>:</strong></dt>
-  <dd><%= @post.content %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:published_at) %>:</strong></dt>
-  <dd><%= @post.published_at %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:status) %>:</strong></dt>
-  <dd><%= @post.status %></dd>
-</dl>
-
-<div class="form-actions">
-  <%= link_to t('.back', :default => t("helpers.links.back")),
-              admin_posts_path, :class => 'btn'  %>
-  <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_admin_post_path(@post), :class => 'btn' %>
-  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              admin_post_path(@post),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
+<% content_for :html_title do -%><%= t('admin.preview') + (@post.html_title.blank? ? @post.title : @post.html_title) %><% end -%>
+<div class="row">  
+  <article>
+    <h4><%= t('admin.preview')%><%= @post.title %></h4>
+    <section>
+      <%= render partial: "full_post", locals: {post: @post} %>    
+    </section>
+    <hr>
+    <footer>
+      <p class="muted">
+        <%= t('post.date_time', time: @post.published_at.strftime("%I:%M%P"), date:@post.published_at.strftime('%A, %d %B %Y'))%>
+      </p>
+      <p>
+        <%= link_to "Back to edit form", edit_admin_post_path(@post) %>
+      </p>
+    </footer>
+  </article>        
 </div>
