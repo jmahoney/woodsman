@@ -7,7 +7,7 @@ class Admin::PostsController < Admin::AdminController
   # GET /admin/posts
   # GET /admin/posts.json
   def index
-    @posts = Post.all
+    @posts = Post.all.blog_order
   end
 
   # GET /admin/posts/1
@@ -31,7 +31,7 @@ class Admin::PostsController < Admin::AdminController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to admin_post_path(@post), notice: 'Post was successfully created.' }
+        format.html { redirect_to admin_posta_path, notice: 'Post was successfully created.' }
         format.json { render action: 'show', status: :created, location: @post }
       else
         format.html { render action: 'new' }
@@ -45,7 +45,7 @@ class Admin::PostsController < Admin::AdminController
   def update
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to admin_post_path(@post), notice: 'Post was successfully updated.' }
+        format.html { redirect_to admin_posts_path, notice: 'Post was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
