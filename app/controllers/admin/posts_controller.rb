@@ -1,9 +1,10 @@
 class Admin::PostsController < Admin::AdminController
   include Markdownable
-  
+  respond_to :html
   layout "admin"
   
   before_action :set_post, only: [:show, :edit, :update, :destroy, :publish, :withdraw]
+  
   
 
   # GET /admin/posts
@@ -32,29 +33,20 @@ class Admin::PostsController < Admin::AdminController
   # POST /admin/posts.json
   def create
     @post = Post.new(post_params)
-
-    respond_to do |format|
-      if @post.save
-        format.html { redirect_to admin_posts_path, notice: 'Post was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @post }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
-      end
+    if @post.save
+      redirect_to admin_posts_path, notice: 'Post was successfully created.' 
+    else
+      render action: 'new' 
     end
   end
 
   # PATCH/PUT /admin/posts/1
   # PATCH/PUT /admin/posts/1.json
   def update
-    respond_to do |format|
-      if @post.update(post_params)
-        format.html { redirect_to admin_posts_path, notice: 'Post was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
-      end
+    if @post.update(post_params)
+      redirect_to admin_posts_path, notice: 'Post was successfully updated.'
+    else
+      render action: 'edit' 
     end
   end
   
@@ -78,10 +70,8 @@ class Admin::PostsController < Admin::AdminController
   # DELETE /admin/posts/1.json
   def destroy
     @post.destroy
-    respond_to do |format|
-      format.html { redirect_to admin_posts_url }
-      format.json { head :no_content }
-    end
+
+    redirect_to admin_posts_url
   end
 
   private
