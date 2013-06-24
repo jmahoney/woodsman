@@ -58,6 +58,24 @@ class Post < ActiveRecord::Base
     self.class.where("published_at < ? AND status = ?", self.published_at, self.status).order("published_at DESC").limit(1).first
   end
   
+  # set the status to published and the publish date to right now
+  def publish!
+    return false unless status == DRAFT
+    
+    status = PUBLISHED
+    published_at = Time.now
+    save
+  end
+  
+  # set the status of a published item to withdrawn
+  def withdraw!
+    return false unless status == PUBLISHED
+    
+    status = DRAFT
+    save
+  end
+
+  
   # post urls will always be in the format /2013/04/my-post-slug
   def to_param
     date_slug

@@ -3,7 +3,7 @@ class Admin::PostsController < Admin::AdminController
   
   layout "admin"
   
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :publish, :withdraw]
   
 
   # GET /admin/posts
@@ -55,6 +55,22 @@ class Admin::PostsController < Admin::AdminController
         format.html { render action: 'edit' }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
+    end
+  end
+  
+  def publish
+    if @post.publish!
+      redirect_to admin_posts_path, notice: t('admin.published')
+    else
+      redirect_to admin_posts_path, notice: t('admin.not_published')
+    end
+  end
+  
+  def withdraw
+    if @post.withdraw!
+      redirect_to admin_posts_path, notice: t('admin.withdrawn')
+    else
+      redirect_to admin_posts_path, notice: t('admin.not_withdrawn')
     end
   end
 

@@ -46,6 +46,17 @@ class Admin::PostsControllerTest < ActionController::TestCase
     assert_redirected_to admin_posts_path
   end
 
+  test "should publish post" do
+    patch :publish, id: @post
+    assert_redirected_to admin_posts_path
+  end
+  
+  test "should withdraw post" do
+    patch :withdraw, id: @post
+    assert_redirected_to admin_posts_path
+  end
+  
+
   test "should destroy post" do
     assert_difference('Post.count', -1) do
       delete :destroy, id: @post
