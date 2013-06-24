@@ -2,7 +2,7 @@
 <% content_for :html_title do -%><%= t('admin.preview') + (@post.html_title.blank? ? @post.title : @post.html_title) %><% end -%>
 <div class="row">  
   <article>
-    <h4><%= t('admin.preview')%><%= @post.title %></h4>
+    <h4><%= t('admin.preview')%> <%= @post.title %></h4>
     <section>
       <%= render partial: "full_post", locals: {post: @post} %>    
     </section>

@@ -60,21 +60,30 @@ class Post < ActiveRecord::Base
   
   # set the status to published and the publish date to right now
   def publish!
-    return false unless status == DRAFT
+    return false unless self.status == DRAFT
     
-    status = PUBLISHED
-    published_at = Time.now
-    save
+    self.status = PUBLISHED
+    self.published_at = Time.now
+    self.save
   end
   
   # set the status of a published item to withdrawn
   def withdraw!
-    return false unless status == PUBLISHED
+    return false unless self.status == PUBLISHED
     
-    status = DRAFT
-    save
+    self.status = DRAFT
+    self.save
   end
 
+  # is the post published
+  def published? 
+    status == PUBLISHED
+  end
+  
+  # is the post in draft?
+  def draft?
+    status == DRAFT
+  end
   
   # post urls will always be in the format /2013/04/my-post-slug
   def to_param

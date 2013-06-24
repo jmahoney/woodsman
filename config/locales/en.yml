@@ -28,6 +28,9 @@ en:
       confirm: "Are you sure?"
       destroy: "Delete"
       new: "New"
+      withdraw: "Withdraw"
+      publish: "Publish"
+      preview: "Preview: "
     titles:
       edit: "Edit"
       save: "Save"
@@ -54,5 +57,8 @@ en:
     next: "Next:"
     previous: "Previously: "
   admin:
-    preview: "Preview: "
+    published: "Successfully published"
+    not_published: "Couldn't publish"
+    withdrawn: "Successfully withdrawn"
+    not_withdrawn: "Couldn't withdraw"
     
