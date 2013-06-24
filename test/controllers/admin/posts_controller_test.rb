@@ -28,7 +28,7 @@ class Admin::PostsControllerTest < ActionController::TestCase
       post :create, post: { content: @post.content, published_at: @post.published_at, status: @post.status, title: @post.title }
     end
 
-    assert_redirected_to admin_post_path(assigns(:post))
+    assert_redirected_to admin_posts_path
   end
 
   test "should show post" do
@@ -43,7 +43,7 @@ class Admin::PostsControllerTest < ActionController::TestCase
 
   test "should update post" do
     patch :update, id: @post, post: { content: @post.content, published_at: @post.published_at, status: @post.status, title: @post.title }
-    assert_redirected_to admin_post_path(assigns(:post))
+    assert_redirected_to admin_posts_path
   end
 
   test "should destroy post" do
