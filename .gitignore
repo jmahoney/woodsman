@@ -17,3 +17,6 @@
 
 # Ignore simplecov code coverage files
 coverage
+
+# Goddamnit OS X
+.DS_Store

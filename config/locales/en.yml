@@ -45,7 +45,7 @@ en:
     archive: "Archive"
     contact: "Contact"
   archive:
-    html_title: "Archive - Joe Mahoney"
+    html_title: "Post Archive - Joe Mahoney"
     title: "Archive"
     intro: |
       Over the years I've tried and abandoned quite a few blogging services and tools, 
