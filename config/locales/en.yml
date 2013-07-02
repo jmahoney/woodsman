@@ -30,12 +30,13 @@ en:
       new: "New"
       withdraw: "Withdraw"
       publish: "Publish"
-      preview: "Preview: "
+      preview: "Preview"
     titles:
       edit: "Edit"
       save: "Save"
       new: "New"
       delete: "Delete"
+      preview: "Preview"
   hello: "Hello world"
   defaults:
     title: "Joe Mahoney"
@@ -57,6 +58,9 @@ en:
     next: "Next:"
     previous: "Previously: "
   admin:
+    title: Admin
+    manage_posts: Manage Posts  
+    model_title: "Admin: %{model_name}"
     published: "Successfully published"
     not_published: "Couldn't publish"
     withdrawn: "Successfully withdrawn"

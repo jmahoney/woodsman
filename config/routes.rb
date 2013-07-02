@@ -1,6 +1,7 @@
 Woodsman::Application.routes.draw do
   
   # post editing done in the admin name space
+  get "admin", to: "admin/admin#index"
   namespace :admin do
     resources :posts, constraints: {id: /\d{4}\/\d{2}\/[a-z|A-Z|\-|0-9]+/} do
       member do
@@ -9,6 +10,8 @@ Woodsman::Application.routes.draw do
       end
     end
   end
+  
+  
   
   # Make Posts accessible from urls using the date_slug of the post
   # and without the /posts/ prefix (e.g.   /2001/02/this-is-the-slug)

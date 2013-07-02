@@ -1,0 +1,11 @@
+<% content_for :html_title do -%>
+  <%= t("admin.title")%>
+<% end -%>
+<div class="row">
+  <h3><%= t("admin.title", model_name: "Posts")%></h3>
+  
+  <ul>
+    <li><%= link_to t("admin.manage_posts"), admin_posts_path %></li>
+  </ul>
+  
+</div>
