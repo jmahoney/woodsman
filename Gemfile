@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0.rc2'
 
-gem 'pg', '>= 0.15.0'
+gem 'pg', '>= 0.15.1'
 
 gem 'redcarpet', '>= 2.2.2'
 
@@ -38,7 +38,6 @@ gem 'jbuilder', '~> 1.0.1'
 # gem 'capistrano', group: :development
 
 group :develop do
-  gem 'debugger'
   gem 'smacssify'
 end
 
