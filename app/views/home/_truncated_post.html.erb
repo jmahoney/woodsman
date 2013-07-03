@@ -1,0 +1,5 @@
+<section>
+  <h4><%= link_to post.title, post_path(post) %></h4>
+  <p class="muted"><%= post.published_at.strftime("%d %b, %Y")%></p>
+  <%= @markdown.render(post.archive_intro).html_safe unless post.archive_intro.blank? %>
+</section>

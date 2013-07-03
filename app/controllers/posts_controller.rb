@@ -4,7 +4,6 @@ class PostsController < ApplicationController
   layout "posts"
   respond_to :html
   before_action :set_post, only: [:show]
-  before_action :set_markdown_renderer
   
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
 

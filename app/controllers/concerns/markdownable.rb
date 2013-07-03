@@ -1,6 +1,10 @@
 module Markdownable
   extend ActiveSupport::Concern
   
+  included do
+    before_action :set_markdown_renderer
+  end
+  
   # set up a renderer that the views can use to render markdown
   # stored in i18n files and post content
   def set_markdown_renderer

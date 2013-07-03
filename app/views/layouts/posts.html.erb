@@ -43,20 +43,23 @@
         <nav class="pull-right">
           <ul class="nav nav-pills">
             <li>
-              <a href="/">Home</a>
+              <%= link_to t("nav.home"), root_path %>
             </li>
             <li>
-              <a href="/archive">Archive</a>
-            </li>
-            <li>
-              <a href="/about">About & Contact</a>
+              <%= link_to t("nav.archive"), archive_posts_path %>
             </li>
           </ul>
         </nav>
         
       </header>    
       <%= yield %>
+      
+      <footer class="row">  
+        <hr>
+        <p class="muted"><%= t("footer.copyright", year: Time.zone.now.year) %></p>
+      </footer>
     </div>
+    
     <!-- Javascripts
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

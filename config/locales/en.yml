@@ -42,9 +42,37 @@ en:
     title: "Joe Mahoney"
     header_title: "Joe Mahoney"
   nav:
+    Home: "Home"
     about: "About"
     archive: "Archive"
     contact: "Contact"
+  home:
+    html_title: "Joe Mahoney"
+    title: Hi!
+    intro: |
+      I'm Joe Mahoney and this is my website.
+      I live with my family in Wellington, New Zealand where I work in web development. 
+    latest_posts_title: "Latest Posts"
+    latest_posts_intro: |
+      I occasionally find myself writing stuff. You can find a full list of 
+      posts in the <a href="/archive">archive</a>. Here are the most recent ones:
+    latest_posts_footer: |
+      
+    links_title: "Me, elsewhere"
+    links_intro: |
+      I'm all over the web, usually under the handle "cheerschopper". The best way
+      to get in touch with me is via Twitter. But if you want to "friend" me on other services, 
+      that's cool too.
+    links_list: |
+      <ul>        
+        <li><a href="http://twitter.com/cheerschopper">Twitter</a></li>
+        <li><a href="http://last.fm/user/foaf">Last.fm</a></li>
+        <li><a href="http://www.flickr.com/photos/cheerschopper/">Flickr</a></li>
+        <li><a href="https://github.com/jmahoney">GitHub</a>
+        <li><a href="http://www.goodreads.com/user/show/2967472-joe-mahoney">GoodReads</a></li>
+        <li><a href="http://cheerschopper.tumblr.com">Tumblr</a></li>
+        <li><a href="http://nz.linkedin.com/in/jmahoney/">LinkedIn</a></li>
+      </ul>
   archive:
     html_title: "Post Archive - Joe Mahoney"
     title: "Archive"
@@ -53,6 +81,7 @@ en:
       the longest serving of which is probably [my tumblr](http://cheerschopper.tumblr.com).
       This archive collects a few posts from the old days and any writing published since 
       the middle of 2013.
+    read_more: "Read more..."
   post:
     date_time: "This post was published at %{time} on %{date}"
     next: "Next:"
@@ -65,4 +94,6 @@ en:
     not_published: "Couldn't publish"
     withdrawn: "Successfully withdrawn"
     not_withdrawn: "Couldn't withdraw"
+  footer:
+    copyright: "Copyright 2010 - %{year} Joe Mahoney"
     
