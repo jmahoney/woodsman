@@ -1,7 +1,7 @@
 <% content_for :html_title do -%><%= @post.html_title.blank? ? @post.title : @post.html_title %><% end -%>
 <div class="row">  
   <article>
-    <h4><%= @post.title %></h4>
+    <h2><%= @post.title %></h2>
     <section>
       <%= render partial: "full_post", locals: {post: @post} %>    
     </section>
