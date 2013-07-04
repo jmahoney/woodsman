@@ -17,6 +17,13 @@ module PostsHelper
     " • " if current < total
   end
   
+  def render_intro_and_content(post)
+    str = ""
+    str += "#{@markdown.render(post.intro).html_safe}" unless post.intro.blank?
+    str += "#{@markdown.render(post.content).html_safe}" unless post.content.blank?
+    str
+  end
+  
   private 
   
   #should we show "posts" or "post"? 

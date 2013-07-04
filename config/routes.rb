@@ -18,6 +18,7 @@ Woodsman::Application.routes.draw do
   # Among other things, the constraints enable the slashes in the slugs
   resources :posts, only: [:show], path: '', constraints: {id: /\d{4}\/\d{2}\/[a-z|A-Z|\-|0-9]+/} do
     get "archive", on: :collection
+    get "feed", on: :collection, defaults: {format: :xml}
   end
   
   # non-resourceful routes to handle date urls like /2004/04 & /2000

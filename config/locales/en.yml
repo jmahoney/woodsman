@@ -41,6 +41,7 @@ en:
   defaults:
     title: "Joe Mahoney"
     header_title: "Joe Mahoney"
+    feed_title: "Latest posts from Joe Mahoney"
   nav:
     Home: "Home"
     about: "About"

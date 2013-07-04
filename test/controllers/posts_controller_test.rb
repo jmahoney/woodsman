@@ -21,7 +21,12 @@ class PostsControllerTest < ActionController::TestCase
     get :archive
     assert_response :success
     assert_not_nil assigns(:archive)  
-    assert_not_nil assigns(:tag_archive)
+  end
+  
+  test "should provide atom feed" do
+    get :feed, :format :xml
+    assert_response :success
+    assert_not_nil assigns(:feed)
   end
 
 end

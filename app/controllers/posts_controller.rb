@@ -2,7 +2,6 @@ class PostsController < ApplicationController
   include Markdownable
   
   layout "posts"
-  respond_to :html
   before_action :set_post, only: [:show]
   
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
@@ -14,15 +13,11 @@ class PostsController < ApplicationController
 
   def archive
     @archive = Post.published.archive_order
-    @tag_archive = Post.tag_archive
   end
   
-  def month
-    @year = params[:year].to_i
-    @month = params[:month].to_i
-    @posts = Post.archive_order.month(@year, @month)
-  end
-  
+  def feed
+    @feed = Post.published.blog_order.limit(10)
+  end  
 
   private
 
