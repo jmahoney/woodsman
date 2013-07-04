@@ -5,14 +5,17 @@
       <h2><%= t("home.title") %></h2>
       <h4 class="muted"><%= t("home.intro") %></h4>
     </section>
+    <hr>
     <section>
       <h3><%= t("home.latest_posts_title")%></h3>
       <p><%= t("home.latest_posts_intro").html_safe %></p>
       
       <% @posts.each do |post| -%>
-        <%= render partial: "truncated_post", locals: {:post => post} %>
+        <%= render partial: "truncated_post", locals: {:post => post} %>        
       <% end -%>  
+      
     </section>
+    <hr>
     <section>
       <h3><%= t("home.links_title") %></h3>
       <p><%= t("home.links_intro") %></p>
