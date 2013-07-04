@@ -16,7 +16,7 @@ class PostsController < ApplicationController
   end
   
   def feed
-    @feed = Post.published.blog_order.limit(10)
+    @posts = Post.published.blog_order.limit(10)
   end  
 
   private
