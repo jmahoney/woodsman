@@ -7,6 +7,10 @@ gem 'pg', '>= 0.15.1'
 
 gem 'redcarpet', '>= 2.2.2'
 
+gem 'dalli'
+
+gem 'rails-observers'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

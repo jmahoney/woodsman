@@ -11,8 +11,8 @@ class PostsController < ApplicationController
   def show
   end
 
-  def archive
-    @archive = Post.published.archive_order
+  def index
+    @posts = Post.published.archive_order
   end
   
   def feed

@@ -1,26 +1,26 @@
-<% content_for :html_title do %><%= t('home.html_title')%><% end -%>
-<div class="row">
-  <article>
-    <section>
-      <h2><%= t("home.title") %></h2>
-      <h4 class="muted"><%= t("home.intro") %></h4>
-    </section>
-    <hr>
-    <section>
-      <h3><%= t("home.latest_posts_title")%></h3>
-      <p><%= t("home.latest_posts_intro").html_safe %></p>
+<% cache @posts do -%>
+  <% content_for :html_title do %><%= t('home.html_title')%><% end -%>
+  <div class="row">
+    <article>
+      <section>
+        <h2><%= t("home.title") %></h2>
+        <h4 class="muted"><%= t("home.intro") %></h4>
+      </section>
+      <hr>
+      <section>
+        <h3><%= t("home.latest_posts_title")%></h3>
+        <p><%= t("home.latest_posts_intro").html_safe %></p>
       
-      <% @posts.each do |post| -%>
-        <%= render partial: "truncated_post", locals: {:post => post} %>        
-      <% end -%>  
+        <%= render partial:'home/post', collection: @posts %>        
       
-    </section>
-    <hr>
-    <section>
-      <h3><%= t("home.links_title") %></h3>
-      <p><%= t("home.links_intro") %></p>
-      <p><%= t("home.links_list").html_safe %></p>
-    </section>
+      </section>
+      <hr>
+      <section>
+        <h3><%= t("home.links_title") %></h3>
+        <p><%= t("home.links_intro") %></p>
+        <p><%= t("home.links_list").html_safe %></p>
+      </section>
     
-  </article>
-</div>
+    </article>
+  </div>
+<% end -%>

@@ -1,0 +1,21 @@
+<% cache @posts do -%>
+
+  <% content_for :html_title do -%><%= t('archive.html_title')%><% end -%>
+
+  <div class="row">  
+    <article>
+      <h2><%= t('archive.title')%></h2>
+      <section>
+        <%= @markdown.render(t('archive.intro')).html_safe %>
+      </section>
+      <section>
+        <% @posts.each do |post| -%>
+          <ul class="unstyled">
+            <li><span class="muted"><%= post.published_at.strftime("%d %b, %Y")%></span> &middot; <%= link_to post.title, post_path(post) %></li>
+          </ul>
+        <% end -%>
+      </section>
+    </article>        
+  </div>
+
+<% end -%>

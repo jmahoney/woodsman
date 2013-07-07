@@ -18,9 +18,9 @@ class PostsControllerTest < ActionController::TestCase
   end
   
   test "should show archive page" do
-    get :archive
+    get :index
     assert_response :success
-    assert_not_nil assigns(:archive)  
+    assert_not_nil assigns(:posts)  
   end
   
   # test "should provide atom feed" do

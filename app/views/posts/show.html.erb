@@ -1,28 +1,41 @@
-<% content_for :html_title do -%><%= @post.html_title.blank? ? @post.title : @post.html_title %><% end -%>
-<div class="row">  
-  <article>
-    <h2><%= @post.title %></h2>
-    <section>
-      <%= render partial: "full_post", locals: {post: @post} %>    
-    </section>
-    <hr>
-    <footer>
-      <p class="muted">
-        <%= t('post.date_time', time: @post.published_at.strftime("%I:%M%P"), date:@post.published_at.strftime('%A, %d %B %Y'))%>
-      </p>
-      <p>
-        <% if @post.previous -%>
-          <%= t('post.previous') %>
-          <%= link_to(@post.previous.title, post_path(@post.previous))%> 
+<% cache @post do -%>
+  <% content_for :html_title do -%><%= @post.html_title.blank? ? @post.title : @post.html_title %><% end -%>
+  <div class="row">  
+    <article>
+      <h2><%= @post.title %></h2>
+      <section>
+        <% unless @post.intro.blank? -%>
+          <section>
+            <%= @markdown.render(@post.intro).html_safe %>
+          </section>
         <% end -%>
-        <% if @post.next and @post.previous -%>
-        <br>
-        <% end %>
-        <% if @post.next -%>
-          <%= t('post.next') %>
-          <%= link_to(@post.next.title, post_path(@post.next))%> 
-        <% end -%>
-      </p>
-    </footer>
-  </article>        
-</div>
+          <% unless @post.content.blank? -%>
+          <section>
+            <%= @markdown.render(@post.content).html_safe %>
+          </section>
+        <% end -%>       
+      </section>
+      <hr>
+      <footer>
+        <p class="muted">
+          <%= t('post.date_time', time: @post.published_at.strftime("%I:%M%P"), date:@post.published_at.strftime('%A, %d %B %Y'))%>
+        </p>
+<% end -%>
+<% cache [@post.previous, @post.next] do %>
+        <p>
+          <% if @post.previous -%>
+            <%= t('post.previous') %>
+            <%= link_to(@post.previous.title, post_path(@post.previous))%> 
+          <% end -%>
+          <% if @post.next and @post.previous -%>
+          <br>
+          <% end %>
+          <% if @post.next -%>
+            <%= t('post.next') %>
+            <%= link_to(@post.next.title, post_path(@post.next))%> 
+          <% end -%>
+        </p>
+      </footer>
+    </article>        
+  </div>
+<% end -%>
