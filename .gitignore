@@ -20,3 +20,6 @@ coverage
 
 # Goddamnit OS X
 .DS_Store
+
+# database.yml files
+/config/database.yml

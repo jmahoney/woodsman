@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0.rc2'
+gem 'rails', '4.0.0'
 
 gem 'pg', '>= 0.15.1'
 
@@ -9,7 +9,9 @@ gem 'redcarpet', '>= 2.2.2'
 
 gem 'dalli'
 
-gem 'rails-observers'
+gem 'unicorn'
+
+gem 'dotenv-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -43,6 +45,7 @@ gem 'jbuilder', '~> 1.0.1'
 
 group :develop do
   gem 'smacssify'
+  gem 'capistrano'
 end
 
 group :test do
