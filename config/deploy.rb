@@ -45,8 +45,9 @@ namespace :deploy do
   task :stop do ; end
   task :restart, :roles => :app, :except => { :no_release => true } do
     run "cd #{release_path}; bundle install --binstubs"
-    sudo "service unicorn_woodsman restart"    
     sudo "service nginx restart"
+    sudo "service unicorn_woodsman stop"
+    sudo "service unicorn_woodsman start"    
   end
   
   namespace :link do
