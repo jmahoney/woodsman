@@ -3,14 +3,13 @@ atom_feed(root_url: "http://iterative.co.nz", url: "http://iterative.co.nz/feed"
     feed.updated(@posts[0].published_at) if @posts.length > 0
 
     @posts.each do |post|
-      feed.entry(post) do |entry|
+      feed.entry(post, published: post.published_at, updated: post.updated_at) do |entry|
         entry.url(post_path(post))
         entry.title(post.title)
         entry.content(render_intro_and_content(post), type: 'html')
         entry.author do |author|
           author.name(t("defaults.title"))
         end
-        entry.updated(post.published_at.strftime("%Y-%m-%dT%H:%M:%SZ"))
       end
     end
   end

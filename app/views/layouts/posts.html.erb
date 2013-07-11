@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= auto_discovery_link_tag :atom, "http://iterative.co.nz/feed" %>
     <title><%= content_for?(:html_title) ? yield(:html_title) : t('defaults.title') %></title>
     <%= csrf_meta_tags %>
 
@@ -57,7 +58,14 @@
       
       <footer class="row">  
         <hr>
-        <p class="muted"><%= t("footer.copyright", year: Time.zone.now.year) %></p>
+        <p class="muted">
+          <span class="pull-left">
+            <%= t("footer.copyright", year: Time.zone.now.year) %>
+          </span>
+          <span class="pull-right">
+            <%= link_to t("nav.feed"), feed_posts_path %>
+          </span>
+        </p>
       </footer>
     </div>
     
