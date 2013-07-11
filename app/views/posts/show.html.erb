@@ -1,5 +1,5 @@
+<% content_for :html_title do -%><%= @post.html_title.blank? ? @post.title : @post.html_title %><% end -%>
 <% cache @post do -%>
-  <% content_for :html_title do -%><%= @post.html_title.blank? ? @post.title : @post.html_title %><% end -%>
   <div class="row">  
     <article>
       <h2><%= @post.title %></h2>
