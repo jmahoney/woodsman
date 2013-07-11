@@ -63,7 +63,7 @@
             <%= t("footer.copyright", year: Time.zone.now.year) %>
           </span>
           <span class="pull-right">
-            <%= link_to t("nav.feed"), feed_posts_path %>
+            <%= link_to t("nav.feed"), feed_posts_path, "data-no-turbolink" => true %>
           </span>
         </p>
       </footer>
