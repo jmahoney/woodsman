@@ -1,6 +1,7 @@
 # Woodsman
 
-I'm trying to keep up with the new stuff in Rails 4, Postgres, and Ruby 2. This project is where I'm doing that.
+This started as a project to get up to speed with Rails 4 and related tech. It turned into the codebase
+for [my website/blog](http://iterative.co.nz). Funny how these things happen.
 
 [![Build Status](https://travis-ci.org/jmahoney/woodsman.png?branch=master)](https://travis-ci.org/jmahoney/woodsman)
 
