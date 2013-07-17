@@ -43,7 +43,7 @@ class PostTest < ActiveSupport::TestCase
     Timecop.freeze(dt) do
       p = Post.new(:title => "Test", :content => "more content")
       p.save
-      assert_equal "test#{dt.strftime('-%H%M%S')}", p.slug, "slug is not what we expect to be generated"
+      assert_not_equal "test", p.slug, "slug is still based on title"
     end 
   end
 
