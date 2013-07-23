@@ -92,6 +92,7 @@ en:
   admin:
     title: Admin
     manage_posts: Manage Posts  
+    manage_images: Manage Images
     model_title: "Admin: %{model_name}"
     published: "Successfully published"
     not_published: "Couldn't publish"

@@ -1,0 +1,32 @@
+<% model_class = Image %>
+<% content_for :html_title do -%>
+  <%= t("admin.model_title", model_name: "Posts")%>
+<% end -%>
+<div class="row">
+  <h3><%= t("admin.model_title", model_name: "Posts")%></h3>
+
+
+  <%= link_to t('.new', :default => t("helpers.links.new")),
+              new_admin_image_path,
+              :class => 'btn btn-primary' %>
+              <br><br>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th></th>
+        <th><%= model_class.human_attribute_name(:title) %></th>
+        <th><%= model_class.human_attribute_name(:created_at) %></th>
+        <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @images %>
+    </tbody>
+  </table>
+
+  <%= link_to t('.new', :default => t("helpers.links.new")),
+              new_admin_image_path,
+              :class => 'btn btn-primary' %>
+
+</div>

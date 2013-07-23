@@ -16,6 +16,10 @@ gem 'dotenv-rails'
 gem 'bootstrap-sass', '~> 2.3.1.0'
 gem 'bootstrap-sass-extras'
 
+gem 'carrierwave'
+
+gem 'rmagick'
+    
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -47,6 +51,7 @@ gem 'jbuilder', '~> 1.0.1'
 group :develop do
   gem 'smacssify'
   gem 'capistrano'
+  #gem 'debugger'
 end
 
 group :test do
