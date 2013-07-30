@@ -3,7 +3,7 @@
   <div class="row">  
     <article>
       <h2><%= t('archive.title')%></h2>
-      <section>
+      <section data-no-turbolink>
         <%= @markdown.render(t('archive.intro')).html_safe %>
       </section>
       <section>
