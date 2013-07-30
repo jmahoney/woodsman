@@ -23,4 +23,5 @@ coverage
 
 # database.yml files
 /config/database.yml
+/public/uploads
 /public/uploads/*
