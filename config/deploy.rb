@@ -37,6 +37,7 @@ after "deploy:restart", "deploy:cleanup"
 before "deploy:assets:precompile",
   "deploy:link:ruby_version", 
   "deploy:link:environment", 
+  "deploy:link:uploads",
   "deploy:link:database"       
 
 namespace :deploy do
@@ -59,6 +60,10 @@ namespace :deploy do
 
     task :environment, :except => {:no_release => true}, :roles => :app do
       run "ln -s #{shared_path}/configuration/dotenv #{release_path}/.env"
+    end
+    
+    task :uploads, :except => {:no_release => true}, :roles => :app do
+      run "ln -s #{shared_path}/uploads #{release_path}/public/uploads"
     end
     
     task :database, :except => {:no_release => true}, :roles => :app do
