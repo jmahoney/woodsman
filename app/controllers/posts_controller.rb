@@ -17,6 +17,7 @@ class PostsController < ApplicationController
   
   def feed
     @posts = Post.published.blog_order.limit(10)
+    render layout: false
   end  
 
   private
