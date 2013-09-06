@@ -48,6 +48,7 @@ gem 'jbuilder', '~> 1.0.1'
 # Deploy with Capistrano
 # gem 'capistrano', group: :development
 
+
 group :develop do
   gem 'smacssify'
   gem 'capistrano'
@@ -60,5 +61,6 @@ group :test do
   gem 'capybara'
   gem 'poltergeist'
 end
+
 
 
