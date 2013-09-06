@@ -44,6 +44,6 @@ ActiveRecord::Schema.define(version: 20130717100547) do
   add_index "posts", ["date_slug"], name: "index_posts_on_date_slug", using: :btree
   add_index "posts", ["slug"], name: "index_posts_on_slug", using: :btree
   add_index "posts", ["status"], name: "index_posts_on_status", using: :btree
-  add_index "posts", ["tags"], name: "name", using: :gin
+  add_index "posts", ["tags"], name: "posts_tags_index", using: :gin
 
 end
