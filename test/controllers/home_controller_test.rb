@@ -7,4 +7,9 @@ class HomeControllerTest < ActionController::TestCase
     assert_response :success
   end
   
+  test "get public key" do
+    get :public_key
+    assert_response :success  
+  end
+  
 end

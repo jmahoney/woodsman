@@ -49,6 +49,7 @@ en:
     contact: "Contact"
     feed: "Feed"
   home:
+    key_title: "Joe Mahoney's GPG public key"
     html_title: "Joe Mahoney"
     title: Hi!
     intro: |
