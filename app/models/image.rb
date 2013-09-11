@@ -1,5 +1,8 @@
 class Image < ActiveRecord::Base
   mount_uploader :image, ImageUploader
+  
+  has_many :posts
+  
   validates_presence_of :image
   
   before_save :ensure_title_set

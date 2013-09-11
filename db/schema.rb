@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130717100547) do
+ActiveRecord::Schema.define(version: 20130723082923) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,9 +39,11 @@ ActiveRecord::Schema.define(version: 20130717100547) do
     t.string   "tags",                                            array: true
     t.string   "date_slug"
     t.text     "archive_intro"
+    t.integer  "image_id"
   end
 
   add_index "posts", ["date_slug"], name: "index_posts_on_date_slug", using: :btree
+  add_index "posts", ["image_id"], name: "index_posts_on_image_id", using: :btree
   add_index "posts", ["slug"], name: "index_posts_on_slug", using: :btree
   add_index "posts", ["status"], name: "index_posts_on_status", using: :btree
   add_index "posts", ["tags"], name: "posts_tags_index", using: :gin

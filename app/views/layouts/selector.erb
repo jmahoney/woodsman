@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title><%= t('images.selector.title')%></title>
+  </head>
+  <body>
+    <div class="container-narrow">
+      <div class="row">
+        <%= yield %>
+      </div>
+    </div>
+    <!-- Javascripts
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <%= javascript_include_tag "application" %>
+  </body>
+  
+</html>

@@ -1,0 +1,7 @@
+<% @images.each do |image| -%>
+  <%= image_tag image.image.thumb.url, 
+        size: "100x100", 
+        alt: image.title, 
+        onclick: "image_selected('#{image.id}','#{image.image.thumb.url}'); return false;"
+  %>
+<% end -%>

@@ -3,7 +3,9 @@ Woodsman::Application.routes.draw do
   # post editing done in the admin name space
   get "admin", to: "admin/admin#index"
   namespace :admin do
-    resources :images
+    resources :images do
+      get "selector", on: :collection
+    end
     resources :posts, constraints: {id: /\d{4}\/\d{2}\/[a-z|A-Z|\-|0-9]+/} do
       member do
         patch "publish"

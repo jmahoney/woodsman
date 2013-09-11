@@ -1,6 +1,8 @@
 class Post < ActiveRecord::Base
   include Taggable
   
+  belongs_to :image
+  
   DRAFT = 'draft'
   PUBLISHED = 'published'
   

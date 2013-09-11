@@ -2,12 +2,15 @@ class Admin::ImagesController < Admin::AdminController
   include Markdownable
   layout "admin"
   
-  before_action :set_admin_image, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_image, only: [:show, :edit, :update, :destroy]
+  before_action :set_images, only: [:index, :selector]
 
   # GET /admin/images
   def index
-    @images = Image.all
+  end
+  
+  def selector
+    render layout: "selector"
   end
 
   # GET /admin/images/1
@@ -51,8 +54,12 @@ class Admin::ImagesController < Admin::AdminController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_admin_image
+    def set_image
       @image = Image.find(params[:id])
+    end
+    
+    def set_images
+      @images = Image.all.order(:title)
     end
 
     # Only allow a trusted parameter "white list" through.

@@ -5,6 +5,25 @@
       <%= f.text_field :title, :class => 'input-block-level' %>
     </div>
   </div>
+  
+  <div class="control-group">
+    <%= f.label :image, :class => 'control-label' %>
+    
+    <div class="controls">
+      <% if @post.image -%>
+        <%= image_tag(@post.image.image.thumb.url, id: "image_thumb") %>
+      <% else -%>
+        <%= image_tag("http://placekitten.com/100/100", id: "image_thumb")%>
+      <% end -%>
+    </div>
+    
+    <div class="controls">
+      <%= f.hidden_field :image_id %>
+      <%= link_to "Select image...", "javascript:select_image();" %>
+    </div>
+    
+  </div>
+  
   <div class="control-group">
     <%= f.label :intro, :class => 'control-label' %>
     <div class="controls">

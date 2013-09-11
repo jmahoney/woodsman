@@ -101,4 +101,7 @@ en:
     not_withdrawn: "Couldn't withdraw"
   footer:
     copyright: "Copyright 2010 - %{year} Joe Mahoney"
+  images:
+    selector: 
+      title: Image selector
     
