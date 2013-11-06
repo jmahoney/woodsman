@@ -10,6 +10,7 @@
 # Ignore environment files
 /.env
 /.ruby_version
+/.ruby_gemset
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
