@@ -1,3 +1,6 @@
+<% if @post.image -%>
+  <%= image_tag @post.image.image.post_width.url, alt: @post.image.title %>
+<% end -%>
 <% unless post.intro.blank? -%>
 <section>
   <%= @markdown.render(post.intro).html_safe %>
