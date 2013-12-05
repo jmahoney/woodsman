@@ -19,7 +19,7 @@ module PostsHelper
   
   def render_intro_and_content(post)
     str = ""
-    str += image_tag(post.image.image.post_width.url, alt: post.image.title)
+    str += image_tag(post.image.image.post_width.url, alt: post.image.title)  unless post.image.blank?
     str += "#{@markdown.render(post.intro).html_safe}" unless post.intro.blank?
     str += "#{@markdown.render(post.content).html_safe}" unless post.content.blank?
     str
