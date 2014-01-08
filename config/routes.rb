@@ -24,6 +24,9 @@ Woodsman::Application.routes.draw do
   end
   get "archive", to: "posts#index", as: "archive"
   
+  # sitemap route
+  get "sitemap", to: "sitemap#index", as: "sitemap", defaults: {format: "xml"}
+  
   # non-resourceful routes to handle date urls like /2004/04 & /2000
   # permanently redirect a url like /2004 to /archive
   get ":year", to: redirect("/archive"), constraints: {year: /\d{4}/}
