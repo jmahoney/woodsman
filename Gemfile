@@ -51,7 +51,7 @@ gem 'jbuilder', '~> 1.0.1'
 
 group :develop do
   gem 'smacssify'
-  gem 'capistrano'
+  gem 'capistrano', '~> 2.15.5'
   #gem 'debugger'
 end
 
