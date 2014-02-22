@@ -1,1 +1,18 @@
-$baseFontSize: 16px;
+$baseFontFamily: "Alike Angular", "Georgia", "Times New Roman", serif;
+$baseFontSize: 18px;
+$paraLineHeight: 1.6;
+
+p {
+  line-height: $paraLineHeight;
+}
+
+h4 {
+  line-height: $paraLineHeight !important;
+}
+
+blockquote {
+  p {
+    font-size: $baseFontSize !important;
+    line-height: $paraLineHeight;
+  }
+}
