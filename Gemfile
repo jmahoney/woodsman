@@ -15,6 +15,7 @@ gem 'dotenv-rails'
 
 gem 'bootstrap-sass', '~> 2.3.1.0'
 gem 'bootstrap-sass-extras'
+gem 'bootswatch-rails'
 
 gem 'carrierwave'
 

@@ -6,15 +6,12 @@
         <h2><%= t("home.title") %></h2>
         <h4 class="muted"><%= t("home.intro") %></h4>
       </section>
-      <hr>
       <section>
         <h3><%= t("home.latest_posts_title")%></h3>
         <p><%= t("home.latest_posts_intro").html_safe %></p>
       
-        <%= render partial:'home/post', collection: @posts %>        
-      
+        <%= render partial:'home/post', collection: @posts %>              
       </section>
-      <hr>
       <section>
         <h3><%= t("home.links_title") %></h3>
         <p><%= t("home.links_intro") %></p>
