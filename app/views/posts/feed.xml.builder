@@ -1,4 +1,4 @@
-atom_feed(root_url: "http://iterative.co.nz", url: "http://iterative.co.nz/feed") do |feed|
+atom_feed(root_url: "https://iterative.co.nz", url: "https://iterative.co.nz/feed") do |feed|
     feed.title(t('defaults.feed_title'))
     feed.updated(@posts[0].published_at) if @posts.length > 0
 
