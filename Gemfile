@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '>= 4.0.0'
+gem 'rails', '>= 4.1.0'
 
 gem 'pg', '>= 0.15.1'
 
@@ -19,15 +19,15 @@ gem 'bootswatch-rails'
 
 gem 'carrierwave'
 
-gem 'rmagick'
-    
+gem 'rmagick', require: false
+
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 4.0.0'
-  gem 'coffee-rails', '~> 4.0.0'
-  
+  gem 'sass-rails'
+  gem 'coffee-rails'
+
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'uglifier', '>= 1.0.3'
 end
@@ -62,6 +62,3 @@ group :test do
   gem 'capybara'
   gem 'poltergeist'
 end
-
-
-
