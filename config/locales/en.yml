@@ -53,22 +53,22 @@ en:
     html_title: "Joe Mahoney"
     title: Hi!
     intro: |
-      I'm Joe Mahoney and this is my website.
-      I live with my family in Wellington, New Zealand where I work in web development. 
+      I'm Joe Mahoney. I'm try to make the internet better from from my kitchen in Wellington, New Zealand.
     latest_posts_title: "Latest Posts"
     latest_posts_intro: |
-      I occasionally find myself writing stuff. You can find a full list of 
+      I post something once or twice a week. You can find a full list of
       posts in the <a href="/archive">archive</a>. Here are the most recent ones:
     latest_posts_footer: |
-      
+
     links_title: "Me, elsewhere"
     links_intro: |
-      I'm all over the web, usually under the handle "cheerschopper". The best way
-      to get in touch with me is via Twitter. But if you want to "friend" me on other services, 
-      that's cool too.
+      I'm all over the web, usually under the handle
+      "<a href='http://www.google.com?q=cheerschopper'>cheerschopper</a>". The best way
+      to get in touch with me is via Twitter.
     links_list: |
-      <ul>        
+      <ul>
         <li><a href="http://twitter.com/cheerschopper">Twitter</a></li>
+        <li><a href="http://www.puthtml.com/cheerschopper">Put HTML</a></li>
         <li><a href="http://last.fm/user/foaf">Last.fm</a></li>
         <li><a href="http://www.flickr.com/photos/cheerschopper/">Flickr</a></li>
         <li><a href="https://github.com/jmahoney">GitHub</a>
@@ -81,9 +81,9 @@ en:
     html_title: "Post Archive - Joe Mahoney"
     title: "Archive"
     intro: |
-      Over the years I've tried and abandoned quite a few blogging services and tools, 
+      Over the years I've tried and abandoned quite a few blogging services and tools,
       the longest serving of which is probably [my tumblr](http://cheerschopper.tumblr.com).
-      This archive collects a few posts from the old days and any writing published since 
+      This archive collects a few posts from the old days and any writing published since
       the middle of 2013. There's also a [feed](http://iterative.co.nz/feed)
       for your RSS reader of choice.
     read_more: "Read more..."
@@ -93,7 +93,7 @@ en:
     previous: "Previously: "
   admin:
     title: Admin
-    manage_posts: Manage Posts  
+    manage_posts: Manage Posts
     manage_images: Manage Images
     model_title: "Admin: %{model_name}"
     published: "Successfully published"
@@ -103,6 +103,5 @@ en:
   footer:
     copyright: "Copyright 2010 - %{year} Joe Mahoney"
   images:
-    selector: 
+    selector:
       title: Image selector
-    
