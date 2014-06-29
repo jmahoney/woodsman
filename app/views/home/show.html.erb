@@ -9,15 +9,15 @@
       <section>
         <h3><%= t("home.latest_posts_title")%></h3>
         <p><%= t("home.latest_posts_intro").html_safe %></p>
-      
-        <%= render partial:'home/post', collection: @posts %>              
+
+        <%= render partial:'home/post', collection: @posts %>
       </section>
       <section>
         <h3><%= t("home.links_title") %></h3>
-        <p><%= t("home.links_intro") %></p>
+        <p><%= t("home.links_intro").html_safe %></p>
         <p><%= t("home.links_list").html_safe %></p>
       </section>
-    
+
     </article>
   </div>
 <% end -%>

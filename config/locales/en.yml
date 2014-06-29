@@ -62,9 +62,9 @@ en:
 
     links_title: "Me, elsewhere"
     links_intro: |
-      I'm all over the web, usually under the handle
-      "<a href='http://www.google.com?q=cheerschopper'>cheerschopper</a>". The best way
-      to get in touch with me is via Twitter.
+      I'm all over the web, usually under the handles
+      <a href="http://www.google.com?q=cheerschopper">cheerschopper</a>, or foaf. The best way
+      to get in touch with me is on <a href="http://twitter.com/cheerschopper">Twitter</a>.
     links_list: |
       <ul>
         <li><a href="http://twitter.com/cheerschopper">Twitter</a></li>
